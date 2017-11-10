@@ -4,7 +4,137 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+@*<link href="@Url.Content("~/Content/StyleSheet.css")" rel="stylesheet" type="text/css" />
+@RenderSection("Content", false)*@
+<div class="channels">
+    <button class="tablink" onclick="openTab('Idag', this, ' #999999')" id="defaultOpen">Idag</button>
+    <button class="tablink" onclick="openTab('Imorgon', this, ' #999999')">Imorgon</button>
+    <button class="tablink" onclick="openTab('n1', this, ' #999999')">Lördag 4/11</button>
+    <button class="tablink" onclick="openTab('n2', this, ' #999999')">Söndag 5/11</button>
+    <button class="tablink" onclick="openTab('n3', this, ' #999999')">Måndag 6/11</button>
+    <button class="tablink" onclick="openTab('n4', this, ' #999999')">Tisdag 7/11</button>
+    <button class="tablink" onclick="openTab('n5', this, ' #999999')">Onsdag 8/11</button>
+    <div id="Idag" class="tabcontent">
+        <ul id="programs">
+            <img href="https://www.svtplay.se/kanaler/svt1" src="@Url.Content("~/Content/Images/SVT1.png")" alt="Ikon för SVT1 saknas" />
+            <li>06.00 Förväxlingen</li>            
+        </ul>
+        <ul id="programs">
+            <img href="https://www.svtplay.se/kanaler/svt2" src="@Url.Content("~/Content/Images/SVT2.png")" alt="Ikon för SVT2 saknas" />
+            <li>06.00 Förväxlingen</li>            
+        </ul>
+        <ul id="programs">
+            <img href="https://www.viafree.se/program/?channel=tv3" src="@Url.Content("~/Content/Images/TV3.png")" alt="Ikon för TV3 saknas" />
+            <li>06.00 Förväxlingen</li>           
+        </ul>
+        <ul id="programs">
+            <img href="http://www.tv4.se/"src="@Url.Content("~/Content/Images/TV4.png")" alt="Ikon för TV4 saknas">          
+            <li>06.00 Förväxlingen</li>            
+        </ul>
+        <ul id="programs">
+            <img href="https://www.viafree.se/program/?channel=tv6"src="@Url.Content("~/Content/Images/TV6.png")" alt="Ikon för TV6 saknas">           
+            <li>06.00 Förväxlingen</li>           
+        </ul>
+    </div>
+    <div id="Imorgon" class="tabcontent">
+        <ul id="programs">
+            <img href="https://www.svtplay.se/kanaler/svt1" src="@Url.Content("~/Content/Images/SVT1.png")" alt="Ikon för SVT1 saknas" />
+            <li>06.00 Förväxlingen</li>          
+        </ul>
+        <ul id="programs">
+            <img href="https://www.svtplay.se/kanaler/svt2" src="@Url.Content("~/Content/Images/SVT2.png")" alt="Ikon för SVT2 saknas" />
+            <li>06.00 Förväxlingen</li>            
+        </ul>
+        <ul id="programs">
+            <img href="https://www.viafree.se/program/?channel=tv3" src="@Url.Content("~/Content/Images/TV3.png")" alt="Ikon för TV3 saknas" />
+            <li>06.00 Förväxlingen</li>          
+        </ul>
+        <ul id="programs">
+            <img href="http://www.tv4.se/"src="@Url.Content("~/Content/Images/TV4.png")" alt="Ikon för TV4 saknas" >      
+            <li>06.00 Förväxlingen</li>            
+        </ul>
+        <ul id="programs">
+            <img href="https://www.viafree.se/program/?channel=tv6"src="@Url.Content("~/Content/Images/TV6.png")" alt="Ikon för TV6 saknas" >           
+            <li>06.00 Förväxlingen</li>            
+        </ul>
+    </div>
+    <div id="n1" class="tabcontent">
+        <ul id="programs">
+            <img href="https://www.svtplay.se/kanaler/svt1" src="@Url.Content("~/Content/Images/SVT1.png")" alt="Ikon för SVT1 saknas" />
+            <li>06.00 Förväxlingen</li>            
+        </ul>
+        <ul id="programs">
+            <img href="https://www.svtplay.se/kanaler/svt2" src="@Url.Content("~/Content/Images/SVT2.png")" alt="Ikon för SVT2 saknas" />
+            <li>06.00 Förväxlingen</li>          
+        </ul>
+        <ul id="programs">
+            <img href="https://www.viafree.se/program/?channel=tv3" src="@Url.Content("~/Content/Images/TV3.png")" alt="Ikon för TV3 saknas" />
+            <li>06.00 Förväxlingen</li>            
+        </ul>
+        <ul id="programs">
+            <img href="http://www.tv4.se/"src="@Url.Content("~/Content/Images/TV4.png")" alt="Ikon för TV4 saknas" >            
+            <li>06.00 Förväxlingen</li>            
+        </ul>
+        <ul id="programs">
+            <img href="https://www.viafree.se/program/?channel=tv6"src="@Url.Content("~/Content/Images/TV6.png")" alt="Ikon för TV6 saknas">            
+            <li>06.00 Förväxlingen</li>            
+        </ul>
+    </div>
+    <div id="n2" class="tabcontent">
+        <ul id="programs">
+            <img href="https://www.svtplay.se/kanaler/svt1" src="@Url.Content("~/Content/Images/SVT1.png")"  alt="Ikon för SVT1 saknas" />
+            <li>06.00 Förväxlingen</li>           
+        </ul>
+        <ul id="programs">
+            <img href="https://www.svtplay.se/kanaler/svt2" src="@Url.Content("~/Content/Images/SVT2.png")" alt="Ikon för SVT2 saknas" />
+            <li>06.00 Förväxlingen</li>            
+        </ul>
+        <ul id="programs">
+            <img href="https://www.viafree.se/program/?channel=tv3" src="@Url.Content("~/Content/Images/TV3.png")"  alt="Ikon för TV3 saknas" />
+            <li>06.00 Förväxlingen</li>            
+        </ul>
+        <ul id="programs">
+            <img href="http://www.tv4.se/"src="@Url.Content("~/Content/Images/TV4.png")"  alt="Ikon för TV4 saknas">
+            <img src="Images/TV4.png" alt="Ikon för TV4 saknas" />
+            <li>06.00 Förväxlingen</li>           
+        </ul>
+        <ul id="programs">
+            <img href="https://www.viafree.se/program/?channel=tv6"src="@Url.Content("~/Content/Images/TV6.png")"  alt="Ikon för TV6 saknas">
+            <img src="Images/TV6.png" alt="Ikon för TV6 saknas" />
+            <li>06.00 Förväxlingen</li>            
+        </ul>
+    </div>
+    <div id="n3" class="tabcontent">
+        <ul id="programs">
+            <img href="https://www.svtplay.se/kanaler/svt1" src="Images/SVT1.png" alt="Ikon för SVT1 saknas" />
+            <li>06.00 Förväxlingen</li>            
+        </ul>
+    </div>
+    <div id="n4" class="tabcontent">
+    </div>
+    <div id="n5" class="tabcontent">
+    </div>
+</div>
+
+<script>
+    function openTab(Name,elmnt,color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(Name).style.display = "block";
+        elmnt.style.backgroundColor = color;
+
+    }
+
+    document.getElementById("defaultOpen").click();
+</script>
+@*<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -66,4 +196,4 @@
     </tr>
 }
 
-</table>
+</table>*@

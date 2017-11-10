@@ -1,40 +1,109 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
+
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <title>@ViewBag.Title - Grupp K</title>
+    <link rel="stylesheet"
+          href="style.css" ;>
+    <meta name="viewport" content="width-device-width, initial scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link href="@Url.Content("~/Content/StyleSheet.css")" rel="stylesheet" type="text/css" />
+    @RenderSection("Styles", false)
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <header>
+        <a href="#" id="logo"></a>
+        <nav id="header">
+            <a href="#" id="menu-icon"></a>
+            <ul class="tabs">
+                <li><a href="index.html" class="current">Tablå</a></li>
+                <li><a href="indexAboutUs.html">Om oss</a></li>
+                <li><a href="indexContact.html">Kontakta oss</a></li>
+                <li><a href="indexLogin.html">Min sida</a></li>
+            </ul>
+            <form id="search">
+                <input id="searchBar" type="text" name="search" placeholder="Search...">
+            </form>
+        </nav>
+    </header>
+    <footer class="firstFooter">
+        <section id="aboutUs">
+            <h3><strong>Om oss</strong></h3>
+            <p>Vi är Sveriges ledande tvtablå och har allt du söker.</p>
+        </section>
+        <section id="contact">
+            <h3><strong>Kontakt</strong></h3>
+            <p>Adress: Campusvägen 13, Östersund</p>
+            <p> Telefon: 0708909897/0707458189</p>
+            <p> E-post: hannesochjonathan@live.se</p>
+        </section>
+        <section id="Icons">
+            <h3><strong>Följ oss på:</strong></h3>
+            <div class="socialIcon1">
+                <img class="facebook"><a href="http://www.facebook.com">
+                    <img src="@Url.Content("~/Content/Images/facebook.png")" alt="Ikon för Facebook saknas" />
+                    <p class="descFacebook">Facebook!</p>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
+            <div class="socialIcon2">
+                <img id="instagram"><a href="https://www.instagram.com/">
+                    <img src="@Url.Content("~/Content/Images/instagram.png")" alt="Ikon för Instagram saknas" />
+                    <p class="descInstagram">Instagram!</p>
             </div>
-        </div>
-    </div>
-
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
-
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+            <div class="socialIcon3">
+                <img id="twitter"><a @*href="https://www.twitter.com/"*@>
+                    <img src="@Url.Content("~/Content/Images/twitter.png")" alt="Ikon för Twitter saknas" />
+                    <p class="descTwitter">Twitter!</p>
+            </div>
+        </section>
+    </footer>
+    <footer class="secondFooter">
+        <p>&copy; Copyright - Tvtablå.se 2017</p>
+    </footer>
+    @RenderBody()
 </body>
 </html>
+
+
+@*<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title - My ASP.NET Application</title>
+        <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>
+
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+    </body>
+    </html>*@
