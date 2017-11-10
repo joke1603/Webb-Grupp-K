@@ -10,7 +10,7 @@
     <meta name="viewport" content="width-device-width, initial scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <link href="@Url.Content("~/Content/StyleSheet.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Style/StyleSheet.css")" rel="stylesheet" type="text/css" />
     @RenderSection("Styles", false)
 </head>
 <body>
@@ -19,10 +19,10 @@
         <nav id="header">
             <a href="#" id="menu-icon"></a>
             <ul class="tabs">
-                <li><a href="index.html" class="current">Tablå</a></li>
-                <li><a href="indexAboutUs.html">Om oss</a></li>
-                <li><a href="indexContact.html">Kontakta oss</a></li>
-                <li><a href="indexLogin.html">Min sida</a></li>
+                <li>@Html.ActionLink("Tablå", "index", "Tv")</li>               
+                @*<li>@Html.ActionLink("Om oss", "indexAboutUs", "Tv")</li>
+                <li>@Html.ActionLink("Kontakta oss", "indexContact", "Tv")</li>
+                <li>@Html.ActionLink("Min sida", "indexLogin", "Tv")</li>*@
             </ul>
             <form id="search">
                 <input id="searchBar" type="text" name="search" placeholder="Search...">
@@ -44,17 +44,17 @@
             <h3><strong>Följ oss på:</strong></h3>
             <div class="socialIcon1">
                 <img class="facebook"><a href="http://www.facebook.com">
-                    <img src="@Url.Content("~/Content/Images/facebook.png")" alt="Ikon för Facebook saknas" />
+                    <img src="@Url.Content("~/Style/Images/facebook.png")" alt="Ikon för Facebook saknas" />
                     <p class="descFacebook">Facebook!</p>
             </div>
             <div class="socialIcon2">
                 <img id="instagram"><a href="https://www.instagram.com/">
-                    <img src="@Url.Content("~/Content/Images/instagram.png")" alt="Ikon för Instagram saknas" />
+                    <img src="@Url.Content("~/Style/Images/instagram.png")" alt="Ikon för Instagram saknas" />
                     <p class="descInstagram">Instagram!</p>
             </div>
             <div class="socialIcon3">
                 <img id="twitter"><a @*href="https://www.twitter.com/"*@>
-                    <img src="@Url.Content("~/Content/Images/twitter.png")" alt="Ikon för Twitter saknas" />
+                    <img src="@Url.Content("~/Style/Images/twitter.png")" alt="Ikon för Twitter saknas" />
                     <p class="descTwitter">Twitter!</p>
             </div>
         </section>
