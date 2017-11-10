@@ -1,0 +1,90 @@
+﻿@model Webb_GruppK.Models.person
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>person</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.role)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.role)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SVT1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SVT1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SVT2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SVT2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TV3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TV3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TV4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TV4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TV6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TV6)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.personid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

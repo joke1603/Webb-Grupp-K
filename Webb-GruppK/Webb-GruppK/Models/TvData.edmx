@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TvModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="channel">
+          <Key>
+            <PropertyRef Name="channelid" />
+          </Key>
+          <Property Name="channelid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="picture" Type="image" />
+        </EntityType>
+        <EntityType Name="person">
+          <Key>
+            <PropertyRef Name="personid" />
+          </Key>
+          <Property Name="personid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="role" Type="varchar" MaxLength="50" />
+          <Property Name="SVT1" Type="int" />
+          <Property Name="SVT2" Type="int" />
+          <Property Name="TV3" Type="int" />
+          <Property Name="TV4" Type="int" />
+          <Property Name="TV6" Type="int" />
+        </EntityType>
+        <EntityType Name="personchannel">
+          <Key>
+            <PropertyRef Name="personchannelid" />
+          </Key>
+          <Property Name="personchannelid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_personid" Type="int" Nullable="false" />
+          <Property Name="FK_channelid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="program">
+          <Key>
+            <PropertyRef Name="programid" />
+          </Key>
+          <Property Name="programid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="description" Type="varchar(max)" />
+          <Property Name="time_from" Type="time" Precision="7" />
+          <Property Name="time_to" Type="time" Precision="7" />
+          <Property Name="genre" Type="varchar" MaxLength="50" />
+          <Property Name="FK_channelid" Type="int" />
+          <Property Name="date" Type="date" />
+        </EntityType>
+        <Association Name="FK_channelid_program">
+          <End Role="channel" Type="Self.channel" Multiplicity="0..1" />
+          <End Role="program" Type="Self.program" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="channel">
+              <PropertyRef Name="channelid" />
+            </Principal>
+            <Dependent Role="program">
+              <PropertyRef Name="FK_channelid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_personchannel_dbo_channel_channelid">
+          <End Role="channel" Type="Self.channel" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="personchannel" Type="Self.personchannel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="channel">
+              <PropertyRef Name="channelid" />
+            </Principal>
+            <Dependent Role="personchannel">
+              <PropertyRef Name="FK_channelid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_personchannel_dbo_person_personid">
+          <End Role="person" Type="Self.person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="personchannel" Type="Self.personchannel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="person">
+              <PropertyRef Name="personid" />
+            </Principal>
+            <Dependent Role="personchannel">
+              <PropertyRef Name="FK_personid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TvModelStoreContainer">
+          <EntitySet Name="channel" EntityType="Self.channel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="person" EntityType="Self.person" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="personchannel" EntityType="Self.personchannel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="program" EntityType="Self.program" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_channelid_program" Association="Self.FK_channelid_program">
+            <End Role="channel" EntitySet="channel" />
+            <End Role="program" EntitySet="program" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_personchannel_dbo_channel_channelid" Association="Self.FK_dbo_personchannel_dbo_channel_channelid">
+            <End Role="channel" EntitySet="channel" />
+            <End Role="personchannel" EntitySet="personchannel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_personchannel_dbo_person_personid" Association="Self.FK_dbo_personchannel_dbo_person_personid">
+            <End Role="person" EntitySet="person" />
+            <End Role="personchannel" EntitySet="personchannel" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TvModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="channel">
+          <Key>
+            <PropertyRef Name="channelid" />
+          </Key>
+          <Property Name="channelid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="programs" Relationship="Self.FK_channelid_program" FromRole="channel" ToRole="program" />
+          <NavigationProperty Name="personchannels" Relationship="Self.FK_dbo_personchannel_dbo_channel_channelid" FromRole="channel" ToRole="personchannel" />
+        </EntityType>
+        <EntityType Name="person">
+          <Key>
+            <PropertyRef Name="personid" />
+          </Key>
+          <Property Name="personid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SVT1" Type="Int32" />
+          <Property Name="SVT2" Type="Int32" />
+          <Property Name="TV3" Type="Int32" />
+          <Property Name="TV4" Type="Int32" />
+          <Property Name="TV6" Type="Int32" />
+          <NavigationProperty Name="personchannels" Relationship="Self.FK_dbo_personchannel_dbo_person_personid" FromRole="person" ToRole="personchannel" />
+        </EntityType>
+        <EntityType Name="personchannel">
+          <Key>
+            <PropertyRef Name="personchannelid" />
+          </Key>
+          <Property Name="personchannelid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_personid" Type="Int32" Nullable="false" />
+          <Property Name="FK_channelid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="channel" Relationship="Self.FK_dbo_personchannel_dbo_channel_channelid" FromRole="personchannel" ToRole="channel" />
+          <NavigationProperty Name="person" Relationship="Self.FK_dbo_personchannel_dbo_person_personid" FromRole="personchannel" ToRole="person" />
+        </EntityType>
+        <EntityType Name="program">
+          <Key>
+            <PropertyRef Name="programid" />
+          </Key>
+          <Property Name="programid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="time_from" Type="Time" Precision="7" />
+          <Property Name="time_to" Type="Time" Precision="7" />
+          <Property Name="genre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FK_channelid" Type="Int32" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="channel" Relationship="Self.FK_channelid_program" FromRole="program" ToRole="channel" />
+        </EntityType>
+        <Association Name="FK_channelid_program">
+          <End Role="channel" Type="Self.channel" Multiplicity="0..1" />
+          <End Role="program" Type="Self.program" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="channel">
+              <PropertyRef Name="channelid" />
+            </Principal>
+            <Dependent Role="program">
+              <PropertyRef Name="FK_channelid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_personchannel_dbo_channel_channelid">
+          <End Role="channel" Type="Self.channel" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="personchannel" Type="Self.personchannel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="channel">
+              <PropertyRef Name="channelid" />
+            </Principal>
+            <Dependent Role="personchannel">
+              <PropertyRef Name="FK_channelid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_personchannel_dbo_person_personid">
+          <End Role="person" Type="Self.person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="personchannel" Type="Self.personchannel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="person">
+              <PropertyRef Name="personid" />
+            </Principal>
+            <Dependent Role="personchannel">
+              <PropertyRef Name="FK_personid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TvEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="channels" EntityType="Self.channel" />
+          <EntitySet Name="people" EntityType="Self.person" />
+          <EntitySet Name="personchannels" EntityType="Self.personchannel" />
+          <EntitySet Name="programs" EntityType="Self.program" />
+          <AssociationSet Name="FK_channelid_program" Association="Self.FK_channelid_program">
+            <End Role="channel" EntitySet="channels" />
+            <End Role="program" EntitySet="programs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_personchannel_dbo_channel_channelid" Association="Self.FK_dbo_personchannel_dbo_channel_channelid">
+            <End Role="channel" EntitySet="channels" />
+            <End Role="personchannel" EntitySet="personchannels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_personchannel_dbo_person_personid" Association="Self.FK_dbo_personchannel_dbo_person_personid">
+            <End Role="person" EntitySet="people" />
+            <End Role="personchannel" EntitySet="personchannels" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TvModelStoreContainer" CdmEntityContainer="TvEntities">
+          <EntitySetMapping Name="channels">
+            <EntityTypeMapping TypeName="TvModel.channel">
+              <MappingFragment StoreEntitySet="channel">
+                <ScalarProperty Name="channelid" ColumnName="channelid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="picture" ColumnName="picture" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="people">
+            <EntityTypeMapping TypeName="TvModel.person">
+              <MappingFragment StoreEntitySet="person">
+                <ScalarProperty Name="personid" ColumnName="personid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="SVT1" ColumnName="SVT1" />
+                <ScalarProperty Name="SVT2" ColumnName="SVT2" />
+                <ScalarProperty Name="TV3" ColumnName="TV3" />
+                <ScalarProperty Name="TV4" ColumnName="TV4" />
+                <ScalarProperty Name="TV6" ColumnName="TV6" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="personchannels">
+            <EntityTypeMapping TypeName="TvModel.personchannel">
+              <MappingFragment StoreEntitySet="personchannel">
+                <ScalarProperty Name="personchannelid" ColumnName="personchannelid" />
+                <ScalarProperty Name="FK_personid" ColumnName="FK_personid" />
+                <ScalarProperty Name="FK_channelid" ColumnName="FK_channelid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="programs">
+            <EntityTypeMapping TypeName="TvModel.program">
+              <MappingFragment StoreEntitySet="program">
+                <ScalarProperty Name="programid" ColumnName="programid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="time_from" ColumnName="time_from" />
+                <ScalarProperty Name="time_to" ColumnName="time_to" />
+                <ScalarProperty Name="genre" ColumnName="genre" />
+                <ScalarProperty Name="FK_channelid" ColumnName="FK_channelid" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
