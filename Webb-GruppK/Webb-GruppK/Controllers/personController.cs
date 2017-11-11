@@ -14,10 +14,66 @@ namespace Webb_GruppK.Controllers
     {
         private TvEntities db = new TvEntities();
 
+
         // GET: person
         public ActionResult Index()
         {
             return View(db.people.ToList());
+        }
+
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Register(person reg)
+        {
+            if (ModelState.IsValid)
+            {
+                db.people.Add(reg);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(person reg)
+        {
+            if (ModelState.IsValid)
+            {
+                var details = (from userlist in db.people
+                               where userlist.email == reg.email && userlist.password == reg.password
+                               select new
+                               {
+                                   userlist.personid,
+                                   userlist.email
+                               }).ToList();
+                if (details.FirstOrDefault() != null)
+                {
+                    Session["personid"] = details.FirstOrDefault().personid;
+                    Session["email"] = details.FirstOrDefault().email;
+                    return RedirectToAction("Welcome");
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("", "Invalid Credentials");
+            }
+            return View(reg);
+        }
+
+        public ActionResult Welcome()
+        {
+            return View();
         }
 
         // GET: person/Details/5
