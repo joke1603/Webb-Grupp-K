@@ -159,7 +159,7 @@ a:hover@menu-icon
 }
 .myProgramSection
 {
-	display: online;
+	display: inline;
 	border: 1px solid #333333;
 	background-color: #999999;
 	opacity: 0.9;
