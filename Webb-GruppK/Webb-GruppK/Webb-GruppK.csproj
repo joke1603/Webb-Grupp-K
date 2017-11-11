@@ -134,6 +134,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Style\Images\couch.png" />
     <Content Include="Style\Images\curtain.jpg" />
     <Content Include="Style\Images\curtain1.jpg" />

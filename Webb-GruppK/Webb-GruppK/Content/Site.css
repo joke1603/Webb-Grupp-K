@@ -1,18 +1,578 @@
-﻿body {
+﻿/*body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
 
-/* Set padding to keep content from hitting the edges */
+ Set padding to keep content from hitting the edges 
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
+ Set width on the form input elements since they're 100% wide by default 
 input,
 select,
 textarea {
     max-width: 280px;
+}*/
+body
+{
+	background-image: url("Images/curtain1.jpg");
+	font: 18px/20px Arial, Sans-Serif;
+	color: #000;
+	margin-top: 250px;
+	margin-bottom: 0;
 }
+h1
+{
+	font-size: 150%;
+	line-height: 50%;
+	padding: 1% 0;
+}
+h3
+{
+	line-height: 50%;
+	padding: 1% 0;
+}
+p
+{
+	padding: 0%;
+}
+img
+{
+	position: relative;
+	max-width: 100%;
+	height: auto;
+	width: auto;	
+}
+
+img:hover
+{
+	opacity: 0.9;	
+}
+a
+{
+	color: black;
+	text-decoration: none;
+	font-weight: bold;	
+}
+a:hover
+{
+	color: black;
+	text-decoration: underline;
+}
+
+header
+{
+	background: #999999;
+	width: 100%;
+	height: 160px;
+	position: fixed;	
+	top: 0;
+	left: 0;
+	z-index: 100;
+	opacity: 0.9;
+}
+#header
+{	
+	float: right;
+	display: inline-block;
+}
+#search
+{
+	float: right;
+	position: absolute;
+	top: 40px;
+	right: 20px;
+}
+#logo
+{
+	margin: 5px 5px 5px 35px;
+	background: url("Images/logo.png") no-repeat center;
+	float: left;
+	width: 150px;
+	height: 150px;
+}
+.tabs
+{
+	float: right;
+	position: absolute;
+	right: 20px;
+	bottom: 5px;
+	
+}
+#menu-icon
+{
+	display: hidden;
+	background: url(https://www.w3newbie.com/wp-content/uploads/icon.png) center;
+	width: 40px;
+	height: 40px;
+}
+a:hover@menu-icon
+{
+	border-radius: 4px 0;
+}
+#searchBar[type=text] {
+    width: 180px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('Images/searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-out-in;
+    transition: width 0.4s ease-out-in;
+}
+#searchBar[type=text]:focus {
+    width: 100%;
+}
+.ui-autocomplete 
+{
+    background: #4a4a4a;
+    border-radius: 0px;
+	color: #FFF;
+	position: relative;
+	z-index: 101;
+}
+.ui-autocomplete.source:hover 
+{
+    background: #454545;
+}
+.ui-menu .ui-menu-item a
+{
+    height:10px;
+    font-size:2px;
+}
+/*---------------------------------Content---------------------------------*/
+ul
+{
+	list-style: none;
+	display: inline-block;	
+}
+nav ul li
+{
+	display: inline-block;
+	padding: 10px;	
+}
+.current
+{
+	color: black;
+	text-decoration: underline;
+}
+.channels
+{
+	margin-top: 150px;
+	color: black;
+	width: 120%;
+}
+#svt1
+{
+	border: 1px solid #333333;
+	background-color: #999999;
+	opacity: 0.9;
+	padding-left: 1px;
+}
+#svt2
+{
+	border: 1px solid #333333;
+	background-color: #999999;
+	opacity: 0.9;
+	padding-left: 1px;
+}
+#tv4
+{
+	border: 1px solid #333333;
+	background-color: #999999;
+	opacity: 0.9;
+	padding-left: 1px;
+}
+#tv6
+{
+	border: 1px solid #333333;
+	background-color: #999999;
+	opacity: 0.9;
+	padding-left: 1px;
+	margin-bottom: 500px;
+}
+section
+{
+	width: 20%;
+	display: inline;
+	float: left;
+	margin: 5px;
+}
+#loginSection
+{
+	border: 1px solid #333333;
+	background-color: #999999;
+	opacity: 0.9;
+	text-align: center;
+	padding: 2%;
+	margin-left: 40%;
+	margin-bottom: 300px;
+}
+#loginButton
+{
+	background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 60px;
+	margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+}
+#txtpassword
+{
+	font-size: 16px;
+}
+#txtusername
+{
+	font-size: 16px;
+}
+#contactSection
+{
+	border: 1px solid #333333;
+	background-color: #999999;
+	opacity: 0.9;
+	text-align: left;
+	padding: 2%;
+	margin-left: 40%;
+	margin-bottom: 500px;
+}
+#btnSend
+{
+	background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 60px;
+	margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+}
+#txtmessage
+{
+	width: 100%;
+	height: 200px;
+}
+#aboutUsArticle
+{
+	margin-left: 10%;
+	float: left;
+	border: 1px solid #333333;
+	background-color: #999999;
+	opacity: 0.9;
+	padding-right: 2%;
+	color: black;
+	padding: 2%;
+}
+#partners
+{
+	margin-left: 5%;
+	float: left;	
+	margin-bottom: 200px;
+	border: 1px solid #333333;
+	background-color: #999999;
+	opacity: 0.9;
+	padding: 2%;
+	color: black;
+}
+.partnerSVT1 img
+{
+	height: 80px;
+	padding-bottom:5%;
+}
+.partnerSVT2 img
+{
+	height: 80px;
+	padding-bottom:5%;
+}
+.partnerTV4 img
+{
+	height: 80px;
+	padding-bottom:5%;
+}
+.partnerTV6 img
+{
+	height: 80px;
+	padding-bottom:5%;
+}
+.descSVT1
+{
+	position: absolute;
+	bottom: 63%;
+	left: 68%;
+	right: 0;
+	color: #fff;
+	visibility: hidden;
+	opacity: 0;
+}
+.descSVT2
+{
+	position: absolute;
+	bottom: 55%;
+	left: 68%;
+	right: 0;
+	color: #fff;
+	visibility: hidden;
+	opacity: 0;
+}
+.descTV4
+{
+	position: absolute;
+	bottom: 47%;
+	left: 73%;
+	right: 0;
+	color: #fff;
+	visibility: hidden;
+	opacity: 0;
+}
+.descTV6
+{
+	position: absolute;
+	bottom: 39%;
+	left: 68%;
+	right: 0;
+	color: #fff;
+	visibility: hidden;
+	opacity: 0;
+}
+.partnerSVT1:hover .descSVT1
+{
+	visibility: visible;
+	opacity: 1;
+}
+.partnerSVT2:hover .descSVT2
+{
+	visibility: visible;
+	opacity: 1;
+}
+.partnerTV4:hover .descTV4
+{
+	visibility: visible;
+	opacity: 1;
+}
+.partnerTV6:hover .descTV6
+{
+	visibility: visible;
+	opacity: 1;
+}
+/*----------------------------------Footer-------------------------------*/
+footer
+{
+	background: #999999;
+	overflow: hidden;
+	width: 100%;
+	height: 200px;
+	position: fixed;	
+	left: 0;
+	bottom: 0;
+	opacity: 0.9;
+	text-align: center;
+}
+footer.firstFooter
+{
+	font-size: 15px;	
+}
+#aboutUs
+{
+	margin-left: 20%;
+}
+footer.secondFooter
+{
+	border-top: 1px solid #333333;
+	background-color: #737373;
+	max-height: 30px;
+	font-size: 10px;
+}
+footer p, footer h3
+{	
+	color: black;
+}
+#Icons img
+{
+	float: left;
+	display: inline;
+	left: 28%;
+}
+.socialIcon1 img
+{
+	height: 60px;
+}
+.socialIcon2 img
+{
+	height: 60px;
+}
+.socialIcon3 img
+{
+	height: 60px;
+}
+.descFacebook
+{
+	position: absolute;
+	top: 10%;
+	bottom: 0;
+	left: 36%;
+	right: 0;
+	color: #fff;
+	visibility: hidden;
+	opacity: 0;
+}
+.descInstagram
+{
+	position: absolute;
+	top: 10%;
+	bottom: 0;
+	left: 43%;
+	right: 0;
+	color: #fff;
+	visibility: hidden;
+	opacity: 0;
+}
+.descTwitter
+{
+	position: absolute;
+	top: 10%;
+	bottom: 0;
+	left: 49%;
+	right: 0;
+	color: #fff;
+	visibility: hidden;
+	opacity: 0;
+}
+.socialIcon1:hover .descFacebook
+{
+	visibility: visible;
+	opacity: 1;
+}
+.socialIcon2:hover .descInstagram
+{
+	visibility: visible;
+	opacity: 1;
+}
+.socialIcon3:hover .descTwitter
+{
+	visibility: visible;
+	opacity: 1;
+}
+/*----------------Media(surfplatta och telefon)-----------------------*/
+@media screen and (max-width: 640px) /* iPhone  640×960*/
+{
+	body:
+	{
+		position: absolute;
+	}
+	footer.firstFooter
+	{
+		visibility: hidden;
+	}
+	#tv6
+	{
+		margin-bottom: 100px;
+	}
+}
+@media screen and (max-width: 770px) /* iPad 767x1024*/
+{
+	header
+	{
+		position: absolute;
+		top: 0;
+	}
+	#menu-icon
+	{
+		display: inline-block;
+		margin-top: 80px;
+		margin-right: 10px;
+	}
+	#search
+	{
+		position: absolute;
+		top: 15px;
+		right: 10px;
+		width: 40%;
+	}
+	nav ul, nav:active ul
+	{
+		display: none;
+		position: absolute;
+		padding: 10px;
+		background: #cccccc;
+		border: 1px solid black;
+		right: 20px;
+		top: 80px;
+		padding-bottom: 50%;
+		width: 50%;
+		border-radius: 2px 2px;
+	}
+	nav li
+	{
+		text-align: center;
+		width: 100%;
+		padding: 10px 0;
+		margin: 0;
+	}
+	nav:hover ul
+	{
+		display: block;
+	}
+	section
+	{
+		float: left;
+		width: 100%;
+		margin: 0;
+		padding: 0;		
+	}
+	footer
+	{	
+		position: fixed;	
+		height: 420px;
+		bottom: 0;
+	}
+	#loginSection
+	{
+		width: 90%;
+		margin-left: 2%;
+		margin-bottom: 480px;
+	}
+	#contactSection
+	{
+		width: 90%;
+		margin-left: 2%;
+		margin-bottom: 480px;
+	}
+	#aboutUsArticle
+	{
+		margin: 0;
+	}
+	#partners
+	{
+		margin: 0;
+		margin-top: 10px;
+		margin-bottom: 480px;
+	}
+	#svt1
+	{
+		width: 80%;
+		margin-bottom: 10px;
+	}
+	#svt2
+	{
+		width: 80%;
+		margin-bottom: 10px;
+	}
+	#tv4
+	{
+		width: 80%;
+		margin-bottom: 10px;
+	}
+	#tv6
+	{
+		width: 80%;
+	}
+}
+
 
