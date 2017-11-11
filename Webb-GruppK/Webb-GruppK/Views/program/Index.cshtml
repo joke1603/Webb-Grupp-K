@@ -3,16 +3,16 @@
     ViewBag.Title = "Index";
 }
 
-@*<link href="@Url.Content("~/Style/StyleSheet.css")" rel="stylesheet" type="text/css" />
-@RenderSection("Style", false)*@
 <div class="channels">
-    <button class="tablink" onclick="openTab('Idag', this, ' #999999')" id="defaultOpen">Idag</button>
-    <button class="tablink" onclick="openTab('Imorgon', this, ' #999999')">Imorgon</button>
-    <button class="tablink" onclick="openTab('n1', this, ' #999999')">Lördag 4/11</button>
-    <button class="tablink" onclick="openTab('n2', this, ' #999999')">Söndag 5/11</button>
-    <button class="tablink" onclick="openTab('n3', this, ' #999999')">Måndag 6/11</button>
-    <button class="tablink" onclick="openTab('n4', this, ' #999999')">Tisdag 7/11</button>
-    <button class="tablink" onclick="openTab('n5', this, ' #999999')">Onsdag 8/11</button>
+    @{ var today = DateTime.Now.Date;           
+     }
+    <button class="tablink" onclick="openTab('Idag', this, ' #999999')" id="defaultOpen">Idag @DateTime.Now.Date.ToString("dd-MM")</button> 
+    <button class="tablink" onclick="openTab('Imorgon', this, ' #999999')">Imorgon @today.AddDays(1).ToString("dd-MM")</button>
+    <button class="tablink" onclick="openTab('n1', this, ' #999999')">@today.AddDays(2).ToString("dd-MM")</button>
+    <button class="tablink" onclick="openTab('n2', this, ' #999999')">@today.AddDays(3).ToString("dd-MM")</button>
+    <button class="tablink" onclick="openTab('n3', this, ' #999999')">@today.AddDays(4).ToString("dd-MM")</button>
+    <button class="tablink" onclick="openTab('n4', this, ' #999999')">@today.AddDays(5).ToString("dd-MM")</button>
+    <button class="tablink" onclick="openTab('n5', this, ' #999999')">@today.AddDays(6).ToString("dd-MM")</button>
     <div id="Idag" class="tabcontent">
         <ul id="programs">
             <img href="https://www.svtplay.se/kanaler/svt1" src="@Url.Content("~/Style/Images/SVT1.png")" alt="Ikon för SVT1 saknas" />
@@ -378,7 +378,6 @@
         </ul>
     </div>
 </div>
-
 <script>
     function openTab(Name,elmnt,color) {
         var i, tabcontent, tablinks;
@@ -397,66 +396,3 @@
 
     document.getElementById("defaultOpen").click();
 </script>
-@*<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.time_from)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.time_to)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.genre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.channel.name)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.time_from)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.time_to)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.genre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.channel.name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.programid }) |
-            @Html.ActionLink("Details", "Details", new { id=item.programid }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.programid })
-        </td>
-    </tr>
-}
-
-</table>*@

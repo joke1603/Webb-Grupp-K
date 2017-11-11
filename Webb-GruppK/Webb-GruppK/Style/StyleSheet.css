@@ -80,9 +80,8 @@ header
 {
 	float: right;
 	position: absolute;
-	right: 20px;
-	bottom: 5px;
-	
+	right: 220px;
+	bottom: 5px;	
 }
 #menu-icon
 {
@@ -130,6 +129,113 @@ a:hover@menu-icon
     font-size:2px;
 }
 /*---------------------------------Content---------------------------------*/
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 16px;
+    font-size: 17px;
+    width: 14.286%;
+}
+.tablink:hover {
+    background-color: #777;
+}
+.tabcontent {
+    color: black;
+    display: none;
+    padding: 40px;
+    text-align: left;
+	top: 150px;
+	padding-top:50px;
+	margin: 90px auto 0;
+	margin-bottom: 300px;
+}
+.tabcontent img
+{
+	height: 80px;	
+}
+.myProgramSection
+{
+	display: online;
+	border: 1px solid #333333;
+	background-color: #999999;
+	opacity: 0.9;
+	padding: 5%;
+	margin-left: 35%;
+	margin-bottom: 300px;
+}
+.myProgramSection img
+{
+	height: 80px;
+}
+
+#btnSave
+{
+	background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 60px;
+	margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+}
+#btnLogout
+{
+	background-color: #737373;
+	background-image: url('Images/lock.png');
+    background-position: 2px 5px; 
+    background-repeat: no-repeat;
+	background-size: 30px 30px;
+    border: 1px solid #333333;
+    color: white;
+    padding: 8px 30px;
+    font-size: 20px;
+	margin-top: 100px;
+	margin-right: 20px;
+	width: 180px;
+}
+input[type=checkbox]
+{
+	-ms-transform: scale(2);
+	-moz-transform: scale(2);
+	-webkit-transform: scale(2);
+	-o-transform: scale(2);
+	padding: 10px;
+	margin-bottom: 20px;
+	
+}
+#programs
+{
+	margin-left: 140px;
+}
+#Idag{
+	background-color: #999999;
+}
+#Imorgon {
+	background-color: #999999;
+}
+#n1{
+	background-color: #999999;
+}
+#n2 {
+	background-color: #999999;
+}
+#n3
+{
+	background-color: #999999;
+}
+#n4
+{
+	background-color: #999999;
+}
+#n5
+{
+	background-color: #999999;
+}
 ul
 {
 	list-style: none;
@@ -144,41 +250,6 @@ nav ul li
 {
 	color: black;
 	text-decoration: underline;
-}
-.channels
-{
-	margin-top: 150px;
-	color: black;
-	width: 120%;
-}
-#svt1
-{
-	border: 1px solid #333333;
-	background-color: #999999;
-	opacity: 0.9;
-	padding-left: 1px;
-}
-#svt2
-{
-	border: 1px solid #333333;
-	background-color: #999999;
-	opacity: 0.9;
-	padding-left: 1px;
-}
-#tv4
-{
-	border: 1px solid #333333;
-	background-color: #999999;
-	opacity: 0.9;
-	padding-left: 1px;
-}
-#tv6
-{
-	border: 1px solid #333333;
-	background-color: #999999;
-	opacity: 0.9;
-	padding-left: 1px;
-	margin-bottom: 500px;
 }
 section
 {
@@ -308,7 +379,7 @@ section
 {
 	position: absolute;
 	bottom: 47%;
-	left: 73%;
+	left: 68%;
 	right: 0;
 	color: #fff;
 	visibility: hidden;
@@ -557,3 +628,41 @@ footer p, footer h3
 		width: 80%;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
