@@ -251,6 +251,9 @@
     <Content Include="Views\program\Edit.cshtml" />
     <Content Include="Views\program\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\person\Register.cshtml" />
+    <Content Include="Views\person\Login.cshtml" />
+    <Content Include="Views\person\Welcome.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

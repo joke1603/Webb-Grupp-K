@@ -11,6 +11,7 @@ namespace Webb_GruppK.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class person
     {
@@ -20,10 +21,17 @@ namespace Webb_GruppK.Models
             this.personchannels = new HashSet<personchannel>();
         }
     
+        [Key]
         public int personid { get; set; }
+        [Display(Name = "Name")]
         public string name { get; set; }
+        [Display(Name = "Email")]
+        [DataType(DataType.EmailAddress)]
         public string email { get; set; }
+        [Display(Name ="Password")]
+        [DataType(DataType.Password)]
         public string password { get; set; }
+        [Display(Name ="Role")]
         public string role { get; set; }
         public Nullable<int> SVT1 { get; set; }
         public Nullable<int> SVT2 { get; set; }
