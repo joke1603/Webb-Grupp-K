@@ -18,10 +18,13 @@
             <img href="https://www.svtplay.se/kanaler/svt1" src="@Url.Content("~/Style/Images/SVT1.png")" alt="Ikon för SVT1 saknas" />
             @foreach (var item in Model)
             {
+                //if (item.date.Value.Date == DateTime.Now.Date)
+                //{
                 if (@item.channel.name == "SVT1")
                 {
                     <li>@item.time_from @item.name</li>
-                }
+                    }
+                @*}*@
             }
         </ul>
         <ul id="programs">
