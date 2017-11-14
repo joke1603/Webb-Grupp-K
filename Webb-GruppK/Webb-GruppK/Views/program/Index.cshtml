@@ -4,36 +4,57 @@
 }
 
 <div class="channels">
-    @{ var today = DateTime.Now.Date;           
+    @{ var dateToday = DateTime.Now.Date;
      }
+    @{var dateTomorrow = DateTime.Now.Date;
+        dateTomorrow.AddDays(1).ToString();
+    }
+    @{var dateN1 = DateTime.Now.Date;
+        dateTomorrow.AddDays(2).ToString();
+    }
+    @{var dateN2 = DateTime.Now.Date;
+        dateTomorrow.AddDays(3).ToString();
+    }
+    @{var dateN3 = DateTime.Now.Date;
+        dateTomorrow.AddDays(4).ToString();
+    }
+    @{var dateN4 = DateTime.Now.Date;
+        dateTomorrow.AddDays(5).ToString();
+    }
+    @{var dateN5 = DateTime.Now.Date;
+        dateTomorrow.AddDays(6).ToString();
+    }
     <button class="tablink" onclick="openTab('Idag', this, ' #999999')" id="defaultOpen">Idag @DateTime.Now.Date.ToString("dd-MM")</button> 
-    <button class="tablink" onclick="openTab('Imorgon', this, ' #999999')">Imorgon @today.AddDays(1).ToString("dd-MM")</button>
-    <button class="tablink" onclick="openTab('n1', this, ' #999999')">@today.AddDays(2).ToString("dd-MM")</button>
-    <button class="tablink" onclick="openTab('n2', this, ' #999999')">@today.AddDays(3).ToString("dd-MM")</button>
-    <button class="tablink" onclick="openTab('n3', this, ' #999999')">@today.AddDays(4).ToString("dd-MM")</button>
-    <button class="tablink" onclick="openTab('n4', this, ' #999999')">@today.AddDays(5).ToString("dd-MM")</button>
-    <button class="tablink" onclick="openTab('n5', this, ' #999999')">@today.AddDays(6).ToString("dd-MM")</button>
+    <button class="tablink" onclick="openTab('Imorgon', this, ' #999999')">Imorgon @dateToday.AddDays(1).ToString("dd-MM")</button>
+    <button class="tablink" onclick="openTab('n1', this, ' #999999')">@dateToday.AddDays(2).ToString("dd-MM")</button>
+    <button class="tablink" onclick="openTab('n2', this, ' #999999')">@dateToday.AddDays(3).ToString("dd-MM")</button>
+    <button class="tablink" onclick="openTab('n3', this, ' #999999')">@dateToday.AddDays(4).ToString("dd-MM")</button>
+    <button class="tablink" onclick="openTab('n4', this, ' #999999')">@dateToday.AddDays(5).ToString("dd-MM")</button>
+    <button class="tablink" onclick="openTab('n5', this, ' #999999')">@dateToday.AddDays(6).ToString("dd-MM")</button>
     <div id="Idag" class="tabcontent">
         <ul id="programs">
             <img href="https://www.svtplay.se/kanaler/svt1" src="@Url.Content("~/Style/Images/SVT1.png")" alt="Ikon för SVT1 saknas" />
             @foreach (var item in Model)
             {
-                //if (item.date.Value.Date == DateTime.Now.Date)
-                //{
-                if (@item.channel.name == "SVT1")
+                if (item.date.Value.Date == dateToday)
                 {
+                    if (@item.channel.name == "SVT1")
+                    {
                     <li>@item.time_from @item.name</li>
                     }
-                @*}*@
+                }
             }
         </ul>
         <ul id="programs">
             <img href="https://www.svtplay.se/kanaler/svt2" src="@Url.Content("~/Style/Images/SVT2.png")" alt="Ikon för SVT2 saknas" />
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "SVT2")
+                if (item.date.Value.Date == dateToday)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "SVT2")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }           
         </ul>
@@ -41,9 +62,12 @@
             <img href="https://www.viafree.se/program/?channel=tv3" src="@Url.Content("~/Style/Images/TV3.png")" alt="Ikon för TV3 saknas" />
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "TV3")
+                if (item.date.Value.Date == dateToday)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "TV3")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }          
         </ul>
@@ -51,9 +75,12 @@
             <img href="http://www.tv4.se/"src="@Url.Content("~/Style/Images/TV4.png")" alt="Ikon för TV4 saknas">          
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "TV4")
+                if (item.date.Value.Date == dateToday)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "TV4")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }           
         </ul>
@@ -61,21 +88,28 @@
             <img href="https://www.viafree.se/program/?channel=tv6"src="@Url.Content("~/Style/Images/TV6.png")" alt="Ikon för TV6 saknas">           
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "TV6")
+                if (item.date.Value.Date == dateToday)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "TV6")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }          
         </ul>
     </div>
     <div id="Imorgon" class="tabcontent">
         <ul id="programs">
+            
             <img href="https://www.svtplay.se/kanaler/svt1" src="@Url.Content("~/Style/Images/SVT1.png")" alt="Ikon för SVT1 saknas" />
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "SVT1")
+                if (item.date.Value.Date == dateTomorrow)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "SVT1")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }          
         </ul>
@@ -83,9 +117,12 @@
             <img href="https://www.svtplay.se/kanaler/svt2" src="@Url.Content("~/Style/Images/SVT2.png")" alt="Ikon för SVT2 saknas" />
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "SVT2")
+                if (item.date.Value.Date == dateTomorrow)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "SVT2")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }           
         </ul>
@@ -93,9 +130,12 @@
             <img href="https://www.viafree.se/program/?channel=tv3" src="@Url.Content("~/Style/Images/TV3.png")" alt="Ikon för TV3 saknas" />
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "TV3")
+                if (item.date.Value.Date == dateTomorrow)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "TV3")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }         
         </ul>
@@ -103,9 +143,12 @@
             <img href="http://www.tv4.se/"src="@Url.Content("~/Style/Images/TV4.png")" alt="Ikon för TV4 saknas" >      
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "TV4")
+                if (item.date.Value.Date == dateTomorrow)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "TV4")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }            
         </ul>
@@ -113,9 +156,12 @@
             <img href="https://www.viafree.se/program/?channel=tv6"src="@Url.Content("~/Style/Images/TV6.png")" alt="Ikon för TV6 saknas" >           
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "TV6")
+                if (item.date.Value.Date == dateTomorrow)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "TV6")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }            
         </ul>
@@ -125,9 +171,12 @@
             <img href="https://www.svtplay.se/kanaler/svt1" src="@Url.Content("~/Style/Images/SVT1.png")" alt="Ikon för SVT1 saknas" />
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "SVT1")
+                if (item.date.Value.Date == dateN1)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "SVT1")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }            
         </ul>
@@ -135,9 +184,12 @@
             <img href="https://www.svtplay.se/kanaler/svt2" src="@Url.Content("~/Style/Images/SVT2.png")" alt="Ikon för SVT2 saknas" />
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "SVT2")
+                if (item.date.Value.Date == dateN1)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "SVT2")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }          
         </ul>
@@ -145,9 +197,12 @@
             <img href="https://www.viafree.se/program/?channel=tv3" src="@Url.Content("~/Style/Images/TV3.png")" alt="Ikon för TV3 saknas" />
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "TV3")
+                if (item.date.Value.Date == dateN1)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "TV3")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }            
         </ul>
@@ -155,19 +210,25 @@
             <img href="http://www.tv4.se/"src="@Url.Content("~/Style/Images/TV4.png")" alt="Ikon för TV4 saknas" >            
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "TV4")
+                if (item.date.Value.Date == dateN1)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "TV4")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }           
         </ul>
         <ul id="programs">
             <img href="https://www.viafree.se/program/?channel=tv6"src="@Url.Content("~/Style/Images/TV6.png")" alt="Ikon för TV6 saknas">            
            @foreach (var item in Model)
-            {
-                if (@item.channel.name == "TV6")
-                {
-                <li>@item.time_from @item.name</li>
+           {
+               if (item.date.Value.Date == dateN1)
+               {
+                   if (@item.channel.name == "TV6")
+                   {
+                    <li>@item.time_from @item.name</li>
+                   }
                }
            }           
         </ul>
@@ -177,9 +238,12 @@
             <img href="https://www.svtplay.se/kanaler/svt1" src="@Url.Content("~/Style/Images/SVT1.png")"  alt="Ikon för SVT1 saknas" />
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "SVT1")
+                if (item.date.Value.Date == dateN2)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "SVT1")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }           
         </ul>
@@ -187,9 +251,12 @@
             <img href="https://www.svtplay.se/kanaler/svt2" src="@Url.Content("~/Style/Images/SVT2.png")" alt="Ikon för SVT2 saknas" />
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "SVT2")
+                if (item.date.Value.Date == dateN2)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "SVT2")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }            
         </ul>
@@ -197,9 +264,12 @@
             <img href="https://www.viafree.se/program/?channel=tv3" src="@Url.Content("~/Style/Images/TV3.png")"  alt="Ikon för TV3 saknas" />
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "TV3")
+                if (item.date.Value.Date == dateN2)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "TV3")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }            
         </ul>
@@ -207,9 +277,12 @@
             <img href="http://www.tv4.se/"src="@Url.Content("~/Style/Images/TV4.png")"  alt="Ikon för TV4 saknas">
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "TV4")
+                if (item.date.Value.Date == dateN2)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "TV4")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }          
         </ul>
@@ -217,9 +290,12 @@
             <img href="https://www.viafree.se/program/?channel=tv6"src="@Url.Content("~/Style/Images/TV6.png")"  alt="Ikon för TV6 saknas">
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "TV6")
+                if (item.date.Value.Date == dateN2)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "TV6")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }            
         </ul>
@@ -229,9 +305,12 @@
             <img href="https://www.svtplay.se/kanaler/svt1" src="@Url.Content("~/Style/Images/SVT1.png")" alt="Ikon för SVT1 saknas" />
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "SVT1")
+                if (item.date.Value.Date == dateN3)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "SVT1")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }          
         </ul>
@@ -239,9 +318,12 @@
             <img href="https://www.svtplay.se/kanaler/svt2" src="@Url.Content("~/Style/Images/SVT2.png")" alt="Ikon för SVT2 saknas" />
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "SVT2")
+                if (item.date.Value.Date == dateN3)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "SVT2")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }
         </ul>
@@ -249,9 +331,12 @@
             <img href="https://www.viafree.se/program/?channel=tv3" src="@Url.Content("~/Style/Images/TV3.png")" alt="Ikon för TV3 saknas" />
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "TV3")
+                if (item.date.Value.Date == dateN3)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "TV3")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }
         </ul>
@@ -259,9 +344,12 @@
             <img href="http://www.tv4.se/" src="@Url.Content("~/Style/Images/TV4.png")" alt="Ikon för TV4 saknas">
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "TV4")
+                if (item.date.Value.Date == dateN3)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "TV4")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }
         </ul>
@@ -269,9 +357,12 @@
             <img href="https://www.viafree.se/program/?channel=tv6" src="@Url.Content("~/Style/Images/TV6.png")" alt="Ikon för TV6 saknas">
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "TV6")
+                if (item.date.Value.Date == dateN3)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "TV6")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }
         </ul>
@@ -281,9 +372,12 @@
             <img href="https://www.svtplay.se/kanaler/svt1" src="@Url.Content("~/Style/Images/SVT1.png")" alt="Ikon för SVT1 saknas" />
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "SVT1")
+                if (item.date.Value.Date == dateN4)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "SVT1")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }
         </ul>
@@ -291,9 +385,12 @@
             <img href="https://www.svtplay.se/kanaler/svt2" src="@Url.Content("~/Style/Images/SVT2.png")" alt="Ikon för SVT2 saknas" />
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "SVT2")
+                if (item.date.Value.Date == dateN4)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "SVT2")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }
         </ul>
@@ -301,9 +398,12 @@
             <img href="https://www.viafree.se/program/?channel=tv3" src="@Url.Content("~/Style/Images/TV3.png")" alt="Ikon för TV3 saknas" />
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "TV3")
+                if (item.date.Value.Date == dateN4)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "TV3")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }
         </ul>
@@ -311,9 +411,12 @@
             <img href="http://www.tv4.se/" src="@Url.Content("~/Style/Images/TV4.png")" alt="Ikon för TV4 saknas">
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "TV4")
+                if (item.date.Value.Date == dateN4)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "TV4")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }
         </ul>
@@ -321,9 +424,12 @@
             <img href="https://www.viafree.se/program/?channel=tv6" src="@Url.Content("~/Style/Images/TV6.png")" alt="Ikon för TV6 saknas">
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "TV6")
+                if (item.date.Value.Date == dateN4)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "TV6")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }
         </ul>
@@ -333,9 +439,12 @@
             <img href="https://www.svtplay.se/kanaler/svt1" src="@Url.Content("~/Style/Images/SVT1.png")" alt="Ikon för SVT1 saknas" />
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "SVT1")
+                if (item.date.Value.Date == dateN5)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "SVT1")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }
         </ul>
@@ -343,9 +452,12 @@
             <img href="https://www.svtplay.se/kanaler/svt2" src="@Url.Content("~/Style/Images/SVT2.png")" alt="Ikon för SVT2 saknas" />
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "SVT2")
+                if (item.date.Value.Date == dateN5)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "SVT2")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }
         </ul>
@@ -353,9 +465,12 @@
             <img href="https://www.viafree.se/program/?channel=tv3" src="@Url.Content("~/Style/Images/TV3.png")" alt="Ikon för TV3 saknas" />
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "TV3")
+                if (item.date.Value.Date == dateN5)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "TV3")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }
         </ul>
@@ -363,9 +478,12 @@
             <img href="http://www.tv4.se/" src="@Url.Content("~/Style/Images/TV4.png")" alt="Ikon för TV4 saknas">
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "TV4")
+                if (item.date.Value.Date == dateN5)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "TV4")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }
         </ul>
@@ -373,9 +491,12 @@
             <img href="https://www.viafree.se/program/?channel=tv6" src="@Url.Content("~/Style/Images/TV6.png")" alt="Ikon för TV6 saknas">
             @foreach (var item in Model)
             {
-                if (@item.channel.name == "TV6")
+                if (item.date.Value.Date == dateN5)
                 {
-                    <li>@item.time_from @item.name</li>
+                    if (@item.channel.name == "TV6")
+                    {
+                        <li>@item.time_from @item.name</li>
+                    }
                 }
             }
         </ul>
