@@ -40,7 +40,7 @@
                 //{
                     if (@item.channel.name == "SVT1")
                     {
-                        <li >@item.time_from @item.name </li> @*title = @item.description*@
+                        <li title=@(item.description + item.time_to)>@item.time_from @item.name </li>
                     }
                 @*}*@
             }
