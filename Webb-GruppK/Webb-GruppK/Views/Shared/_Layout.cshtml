@@ -41,9 +41,13 @@
                     <li class="current">@Html.ActionLink("Logga in", "Login", "Login")</li>
                 }
             </ul>
-            <form id="search">
-                <input id="searchBar" type="text" name="search" placeholder="Search...">
-            </form>
+            @using (Html.BeginForm())
+            {
+                <p id="search">
+                    @Html.TextBox("SearchString")
+                    <input id="searchButton" type="submit" value="Sök" />
+                </p>
+            }
         </nav>
     </header>
     <footer class="firstFooter">
