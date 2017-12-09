@@ -3,13 +3,13 @@
     ViewBag.Title = "Min Sida";
 }
 <div class="AddChannels">
-    <input type="button" value="Lägg till favorit kanal" onclick="location.href='@Url.Action("chanlist", "Home")'" />
+    <input id="favoriteChannelButton" type="button" value="Lägg till favorit kanal" onclick="location.href='@Url.Action("chanlist", "Home")'" />
 
 </div>
-<div class="channels">
+<div class="favoriteChannels">
     @foreach (int channel in ViewBag.favoritelist)
     {
-        <div class="channels">
+        <div class="channel">
 
             @if (channel == 1)
             {
@@ -31,21 +31,19 @@
             {
                 <h3 class="channels">Kanal5</h3>
             }
-
-
             @foreach (var program in Model)
             {
-                if (channel == program.FK_channelid)
-                {
-                    
-                        <ul class="programs">
-                            <li>
-                                <b><a>@program.time_from @program.name</a></b>
-                            </li>
+                    if (channel == program.FK_channelid)
+                    {
 
-                        </ul>
-                    
-                }
+                    <ul class="programs">
+                        <li>
+                            <b><a>@program.time_from @program.name</a></b>
+                        </li>
+
+                    </ul>
+
+                    }
             }
 
 

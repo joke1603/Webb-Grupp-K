@@ -501,6 +501,31 @@ section
 	visibility: visible;
 	opacity: 1;
 }
+.favoriteChannels
+{
+    width: 100%;
+    background: #999999;
+}
+.channel
+{
+    margin: 2% 4% 4% 2.4%;
+    display: inline-block;
+}
+.programs{
+    display: inline;
+}
+#favoriteChannelButton
+{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 60px;
+	margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+}
 /*----------------------------------Footer-------------------------------*/
 footer
 {

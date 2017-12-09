@@ -2,7 +2,6 @@
 @{
     ViewBag.Title = "Index";
 }
-
 <div id="genreSearchSection">
     @using (Html.BeginForm())
     {
@@ -15,7 +14,9 @@
                 new SelectListItem {Text = "Politik" },
                 new SelectListItem {Text = "Väder" },
                 new SelectListItem {Text = "Sci-fi" },
-                new SelectListItem {Text = "Sport" }
+                new SelectListItem {Text = "Sport" },
+                new SelectListItem {Text = "Drama" },
+                new SelectListItem {Text = "Debatt" }
             })
         <input id="searchGenreButton" type="submit" value="Sök genre" />
     }
@@ -536,7 +537,6 @@
         elmnt.style.backgroundColor = color;
 
     }
-
     document.getElementById("defaultOpen").click();
 
     //$(document).ready(function () {
