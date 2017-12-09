@@ -514,7 +514,7 @@ section
 .programs{
     display: inline;
 }
-#favoriteChannelButton
+#addchannels
 {
     background-color: #4CAF50;
     border: none;
@@ -525,6 +525,31 @@ section
     text-align: center;
     text-decoration: none;
     font-size: 20px;
+}
+#addFavoriteButton
+{
+     background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 60px;
+	margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    /*background-color: #4CAF50;
+    border: none;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;*/
+}
+#addFavoriteSection
+{
+    background: #999999;
+    padding: 2%;
+    width: 10%;
+    margin-left: 43%;
 }
 /*----------------------------------Footer-------------------------------*/
 footer

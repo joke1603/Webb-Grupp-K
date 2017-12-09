@@ -1,10 +1,11 @@
 ﻿@model Webb_GruppK.Models.personchannel
+<div id="addFavoriteSection">
+    @using (Html.BeginForm("chanlist", "Home", FormMethod.Post))
+    {
 
-@using (Html.BeginForm("chanlist", "Home", FormMethod.Post))
-{
-
-    @Html.DropDownListFor(x => x.FK_channelid, new SelectList(ViewBag.addfavorite, "Value", "Text"))
+        @Html.DropDownListFor(x => x.FK_channelid, new SelectList(ViewBag.addfavorite, "Value", "Text"))
 
 
-    <input type="submit" value="Lägg till" id="addchannels" />
-}
+        <input type="submit" value="Lägg till" id="addchannels" />
+    }
+</div>
