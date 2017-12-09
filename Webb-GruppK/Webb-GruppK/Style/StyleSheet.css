@@ -94,7 +94,7 @@ a:hover@menu-icon
 {
 	border-radius: 4px 0;
 }
-#searchBar[type=text] {
+/*#searchBar[type=text] {
     width: 180px;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -127,7 +127,7 @@ a:hover@menu-icon
 {
     height:10px;
     font-size:2px;
-}
+}*/
 /*---------------------------------Content---------------------------------*/
 .tablink {
     background-color: #555;
@@ -251,6 +251,31 @@ nav ul li
 {
 	color: black;
 	text-decoration: underline;
+}
+#searchButton
+{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 0px 30px;
+	margin-top: 0;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+}
+#searchGenreButton
+{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+}
+#genreSearchSection
+{
+    margin-left: 45%;  
+    margin-bottom: 30px; 
 }
 section
 {

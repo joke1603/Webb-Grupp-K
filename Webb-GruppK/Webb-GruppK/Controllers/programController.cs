@@ -17,6 +17,7 @@ namespace Webb_GruppK.Controllers
         // GET: program
         public ActionResult Index()
         {
+           
             var programs = db.programs.Include(p => p.channel);
             return View(programs.ToList());
         }

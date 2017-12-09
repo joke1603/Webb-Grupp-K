@@ -2,6 +2,24 @@
 @{
     ViewBag.Title = "Index";
 }
+
+<div id="genreSearchSection">
+    @using (Html.BeginForm())
+    {
+        @Html.DropDownList("GenreSearch", new List<SelectListItem>
+            {
+                new SelectListItem {Text = "Alla", Value = ""},
+                new SelectListItem {Text = "Nyheter" },
+                new SelectListItem {Text = "Reality" },
+                new SelectListItem {Text = "Kriminal" },
+                new SelectListItem {Text = "Politik" },
+                new SelectListItem {Text = "Väder" },
+                new SelectListItem {Text = "Sci-fi" },
+                new SelectListItem {Text = "Sport" }
+            })
+        <input id="searchGenreButton" type="submit" value="Sök genre" />
+    }
+</div>
 <div class="channels">
     @{ var dateToday = DateTime.Now.Date;
     }
@@ -23,6 +41,7 @@
     @{var dateN5 = DateTime.Now.Date;
         dateTomorrow.AddDays(6).ToString();
     }
+    
     <button class="tablink" onclick="openTab('Idag', this, ' #999999')" id="defaultOpen">Idag @DateTime.Now.Date.ToString("dd-MM")</button>
     <button class="tablink" onclick="openTab('Imorgon', this, ' #999999')">Imorgon @dateToday.AddDays(1).ToString("dd-MM")</button>
     <button class="tablink" onclick="openTab('n1', this, ' #999999')">@dateToday.AddDays(2).ToString("dd-MM")</button>

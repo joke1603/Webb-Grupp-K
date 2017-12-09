@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Webb_GruppK.Models;
@@ -12,10 +15,42 @@ namespace Webb_GruppK.Controllers
         TvEntities db = new TvEntities();
 
         //GET: Home
-        public ActionResult Index()
+        public ActionResult Index(string searchString, string genreSearch)
         {
-            ViewBag.Channels = db.channels.OrderBy(c => c.name).ToList();
-            return View(db.programs.Include("channel").ToList());
+            var program = db.programs.Include(p => p.channel);
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                program = program.Where(p => p.name.Contains(searchString) || p.genre.Contains(searchString) || p.channel.name.Contains(searchString));
+            }
+            if (!string.IsNullOrEmpty(genreSearch))
+            {
+                program = program.Where(p => p.genre.Contains(genreSearch));
+            }
+            return View(program.ToList());
+            //var program = db.programs.Include(p => p.channel);
+            //if (!String.IsNullOrEmpty(searchString))
+            //{
+            //    program = program.Where(p => p.name.Contains(searchString) || p.genre.Contains(searchString) || p.channel.name.Contains(searchString));
+            //}
+            //if (!string.IsNullOrEmpty(genreSearch))
+            //{
+            //    program = program.Where(p => p.genre.Contains(genreSearch));
+            //}
+            //var programs = db.programs.Include(p => p.channel);
+            //return View(programs.ToList());
+
+
+            //var pro = db.programs.Include(p => p.channel);
+            //if (!String.IsNullOrEmpty(searchString))
+            //{
+            //    pro = pro.Where(p => p.name.Contains(searchString) || p.genre.Contains(searchString) || p.channel.name.Contains(searchString));             
+            //}
+            //if (!string.IsNullOrEmpty(genreSearch))
+            //{
+            //    pro = pro.Where(p => p.genre.Contains(genreSearch));
+            //}
+            ////ViewBag.Channels = db.channels.OrderBy(c => c.name).ToList();
+            //return View(pro.ToList()); //.Include("channel")
         }
 
         [HttpGet]
