@@ -13,6 +13,13 @@
           <Property Name="name" Type="varchar" MaxLength="50" />
           <Property Name="picture" Type="image" />
         </EntityType>
+        <EntityType Name="news">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="programid" Type="int" />
+        </EntityType>
         <EntityType Name="person">
           <Key>
             <PropertyRef Name="personid" />
@@ -89,8 +96,21 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_news_program">
+          <End Role="program" Type="Self.program" Multiplicity="0..1" />
+          <End Role="news" Type="Self.news" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="program">
+              <PropertyRef Name="programid" />
+            </Principal>
+            <Dependent Role="news">
+              <PropertyRef Name="programid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="TvModelStoreContainer">
           <EntitySet Name="channel" EntityType="Self.channel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="news" EntityType="Self.news" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="person" EntityType="Self.person" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="personchannel" EntityType="Self.personchannel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="program" EntityType="Self.program" Schema="dbo" store:Type="Tables" />
@@ -105,6 +125,10 @@
           <AssociationSet Name="FK_dbo_personchannel_dbo_person_personid" Association="Self.FK_dbo_personchannel_dbo_person_personid">
             <End Role="person" EntitySet="person" />
             <End Role="personchannel" EntitySet="personchannel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_news_program" Association="Self.FK_news_program">
+            <End Role="program" EntitySet="program" />
+            <End Role="news" EntitySet="news" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -160,6 +184,7 @@
           <Property Name="FK_channelid" Type="Int32" />
           <Property Name="date" Type="DateTime" Precision="0" />
           <NavigationProperty Name="channel" Relationship="Self.FK_channelid_program" FromRole="program" ToRole="channel" />
+          <NavigationProperty Name="news" Relationship="TvModel.FK_news_program" FromRole="program" ToRole="news" />
         </EntityType>
         <Association Name="FK_channelid_program">
           <End Role="channel" Type="Self.channel" Multiplicity="0..1" />
@@ -218,7 +243,32 @@
             <End Role="person" EntitySet="people" />
             <End Role="personchannel" EntitySet="personchannels" />
           </AssociationSet>
+          <EntitySet Name="news" EntityType="TvModel.news" />
+          <AssociationSet Name="FK_news_program" Association="TvModel.FK_news_program">
+            <End Role="program" EntitySet="programs" />
+            <End Role="news" EntitySet="news" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="news">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="programid" Type="Int32" />
+          <NavigationProperty Name="program" Relationship="TvModel.FK_news_program" FromRole="news" ToRole="program" />
+        </EntityType>
+        <Association Name="FK_news_program">
+          <End Type="TvModel.program" Role="program" Multiplicity="0..1" />
+          <End Type="TvModel.news" Role="news" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="program">
+              <PropertyRef Name="programid" />
+            </Principal>
+            <Dependent Role="news">
+              <PropertyRef Name="programid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -270,6 +320,14 @@
                 <ScalarProperty Name="genre" ColumnName="genre" />
                 <ScalarProperty Name="FK_channelid" ColumnName="FK_channelid" />
                 <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="news">
+            <EntityTypeMapping TypeName="TvModel.news">
+              <MappingFragment StoreEntitySet="news">
+                <ScalarProperty Name="programid" ColumnName="programid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

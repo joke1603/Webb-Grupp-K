@@ -206,6 +206,9 @@
     <Compile Include="Models\channel.cs">
       <DependentUpon>TvData.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\news.cs">
+      <DependentUpon>TvData.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\person.cs">
       <DependentUpon>TvData.tt</DependentUpon>
     </Compile>
@@ -260,6 +263,7 @@
     <Content Include="Views\Home\MyPage.cshtml" />
     <Content Include="Views\Home\chanlist.cshtml" />
     <Content Include="Views\Home\addfavorite.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -18,6 +18,15 @@ using System;
 public partial class program
 {
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public program()
+    {
+
+        this.news = new HashSet<news>();
+
+    }
+
+
     public int programid { get; set; }
 
     public string name { get; set; }
@@ -37,6 +46,10 @@ public partial class program
 
 
     public virtual channel channel { get; set; }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+
+    public virtual ICollection<news> news { get; set; }
 
 }
 

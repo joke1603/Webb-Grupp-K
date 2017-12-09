@@ -40,6 +40,8 @@ public partial class TvEntities : DbContext
 
     public virtual DbSet<program> programs { get; set; }
 
+    public virtual DbSet<news> news { get; set; }
+
 }
 
 }

@@ -12,6 +12,8 @@
         <AssociationConnector Association="TvModel.FK_channelid_program" ManuallyRouted="false" />
         <AssociationConnector Association="TvModel.FK_dbo_personchannel_dbo_channel_channelid" ManuallyRouted="false" />
         <AssociationConnector Association="TvModel.FK_dbo_personchannel_dbo_person_personid" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TvModel.news" Width="1.5" PointX="5.25" PointY="5.875" />
+        <AssociationConnector Association="TvModel.FK_news_program" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
