@@ -63,7 +63,7 @@ namespace Webb_GruppK.Controllers
                     Session["personid"] = details.FirstOrDefault().personid;
                     Session["email"] = details.FirstOrDefault().email;
                     Session["admin"] = details.FirstOrDefault().role;
-                    return RedirectToAction("Index", "program");
+                    return RedirectToAction("Index", "Home");
                 }
             }
             else

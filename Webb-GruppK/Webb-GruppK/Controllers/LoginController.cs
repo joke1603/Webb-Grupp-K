@@ -23,7 +23,7 @@ namespace Webb_GruppK.Controllers
                 Session["id"] = Usr.personid;
                 Session["email"] = Usr.email;
                 Session["admin"] = Usr.role;
-                return RedirectToAction("Index", "program");
+                return RedirectToAction("Index", "Home");
             }
         }
 

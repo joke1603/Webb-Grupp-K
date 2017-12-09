@@ -537,12 +537,6 @@ section
     text-align: center;
     text-decoration: none;
     font-size: 20px;
-    /*background-color: #4CAF50;
-    border: none;
-    color: white;
-    font-size: 20px;
-    text-align: center;
-    text-decoration: none;*/
 }
 #addFavoriteSection
 {
@@ -550,6 +544,17 @@ section
     padding: 2%;
     width: 10%;
     margin-left: 43%;
+}
+#favoriteChannelButton
+{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 60px;
+	margin-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
 }
 /*----------------------------------Footer-------------------------------*/
 footer
