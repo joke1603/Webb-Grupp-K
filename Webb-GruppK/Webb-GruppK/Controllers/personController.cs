@@ -55,13 +55,15 @@ namespace Webb_GruppK.Controllers
                                select new
                                {
                                    userlist.personid,
-                                   userlist.email
+                                   userlist.email,
+                                   userlist.role
                                }).ToList();
                 if (details.FirstOrDefault() != null)
                 {
                     Session["personid"] = details.FirstOrDefault().personid;
                     Session["email"] = details.FirstOrDefault().email;
-                    return RedirectToAction("Welcome");
+                    Session["admin"] = details.FirstOrDefault().role;
+                    return RedirectToAction("Index", "program");
                 }
             }
             else

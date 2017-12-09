@@ -21,9 +21,25 @@
         <nav id="header">
             <a href="#" id="menu-icon"></a>
             <ul class="tabs">
+                @if (Session["admin"] != null)
+                {
                 <li>@Html.ActionLink("Tablå", "index", "program")</li>
-                <li>@Html.ActionLink("Registrera", "Register", "person")</li>
-                <li>@Html.ActionLink("Logga in", "Login", "person")</li>               
+                <li>@Html.ActionLink("Logga ut", "Logout", "Login")</li>
+                <li>@Html.ActionLink("Min sida", "MyPage", "Home")</li>
+                }
+
+                else if (Session["id"] != null)
+                {
+                    <li class="current">@Html.ActionLink("Hem", "Index", "Home")</li>
+                    <li class="current">@Html.ActionLink("Min Sida", "minSida", "Home")</li>
+                    <li class="current">@Html.ActionLink("Logga Ut", "Logout", "Login")</li>
+                }
+                else
+                {
+                    <li class="current">@Html.ActionLink("Hem", "Index", "Home")</li>
+                    <li class="current">@Html.ActionLink("Registrera", "account", "Home")</li>
+                    <li class="current">@Html.ActionLink("Logga in", "Login", "Login")</li>
+                }
             </ul>
             <form id="search">
                 <input id="searchBar" type="text" name="search" placeholder="Search...">

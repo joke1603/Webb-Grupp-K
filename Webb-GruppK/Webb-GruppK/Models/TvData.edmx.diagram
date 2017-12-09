@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="294cb5ce5746485a9f0004a550fca50d" Name="Diagram1">
         <EntityTypeShape EntityType="TvModel.channel" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="TvModel.person" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TvModel.person" Width="1.5" PointX="5.375" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="TvModel.personchannel" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="TvModel.program" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
         <AssociationConnector Association="TvModel.FK_channelid_program" ManuallyRouted="false" />

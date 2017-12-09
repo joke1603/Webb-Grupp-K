@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Webb_GruppK.Models.program>
+@{
+    ViewBag.Title = "Min Sida";
+}
+<div class="AddChannels">
+    <input type="button" value="Lägg till favorit kanal" onclick="location.href='@Url.Action("chanlist", "Home")'" />
+
+</div>
+<div class="channels">
+    @foreach (int channel in ViewBag.favoritelist)
+    {
+        <div class="channels">
+
+            @if (channel == 1)
+            {
+                <h3 class="channels">SVT1</h3>
+            }
+            else if (channel == 2)
+            {
+                <h3 class="channels">SVT2</h3>
+            }
+            else if (channel == 3)
+            {
+                <h3 class="channels">TV3</h3>
+            }
+            else if (channel == 4)
+            {
+                <h3 class="channels">TV4</h3>
+            }
+            else if (channel == 5)
+            {
+                <h3 class="channels">Kanal5</h3>
+            }
+
+
+            @foreach (var program in Model)
+            {
+                if (channel == program.FK_channelid)
+                {
+                    
+                        <ul class="programs">
+                            <li>
+                                <b><a>@program.time_from @program.name</a></b>
+                            </li>
+
+                        </ul>
+                    
+                }
+            }
+
+
+
+        </div>
+
+    }
+</div>
