@@ -2,15 +2,33 @@
 @{
     ViewBag.Title = "Index";
 }
-<div  id="news">
-    @foreach (var item in Model)
-    {
-        <div>
+@*<div id="news1">
+    
 
-
-        </div>
-    }   
 </div>
+<div id="news2">
+
+
+</div>
+<div id="news3">
+
+
+</div>*@
+
+@foreach (var news in ViewBag.newslist)
+{
+    <div id="news">
+        @foreach (var p in Model)
+        {
+            if (news.programid == p.programid)
+            {
+            <p>
+                @p.name, @p.description;
+        </p>
+            }
+        }
+    </div>
+}
 <div id="genreSearchSection">
     @using (Html.BeginForm())
     {
