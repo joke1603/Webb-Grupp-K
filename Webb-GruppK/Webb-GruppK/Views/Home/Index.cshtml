@@ -22,18 +22,18 @@
             {
                 if (news.programid == p.programid)
                 {
-                    <h1>@p.name</h1>
+                    <h1>@Html.ActionLink(p.name, "newsinfo",new { newNews = p.programid}) </h1>
                     <h2>@news.information</h2>
                     <p>@p.date @p.time_from</p>
                 }
-            }
+                                    }
         </div>
     }
 </div>
 <div id="genreSearchSection">
     @using (Html.BeginForm())
     {
-        @Html.DropDownList("GenreSearch", new List<SelectListItem>
+                                    @Html.DropDownList("GenreSearch", new List<SelectListItem>
             {
                 new SelectListItem {Text = "Alla", Value = ""},
                 new SelectListItem {Text = "Nyheter" },
@@ -45,29 +45,29 @@
                 new SelectListItem {Text = "Drama" },
                 new SelectListItem {Text = "Debatt" }
             })
-        <input id="searchGenreButton" type="submit" value="Sök genre" />
+                                    <input id="searchGenreButton" type="submit" value="Sök genre" />
     }
 </div>
 <div class="channels">
     @{ var dateToday = DateTime.Now.Date;
-    }
+                        }
     @{var dateTomorrow = DateTime.Now.Date;
-        dateTomorrow.AddDays(1).ToString();
-    }
+                        dateTomorrow.AddDays(1).ToString();
+                    }
     @{var dateN1 = DateTime.Now.Date;
-        dateTomorrow.AddDays(2).ToString();
+                    dateTomorrow.AddDays(2).ToString();
     }
     @{var dateN2 = DateTime.Now.Date;
-        dateTomorrow.AddDays(3).ToString();
+                    dateTomorrow.AddDays(3).ToString();
     }
     @{var dateN3 = DateTime.Now.Date;
-        dateTomorrow.AddDays(4).ToString();
+                    dateTomorrow.AddDays(4).ToString();
     }
     @{var dateN4 = DateTime.Now.Date;
-        dateTomorrow.AddDays(5).ToString();
+                    dateTomorrow.AddDays(5).ToString();
     }
     @{var dateN5 = DateTime.Now.Date;
-        dateTomorrow.AddDays(6).ToString();
+                    dateTomorrow.AddDays(6).ToString();
     }
     
     <button class="tablink" onclick="openTab('Idag', this, ' #999999')" id="defaultOpen">Idag @DateTime.Now.Date.ToString("dd-MM")</button>
@@ -81,13 +81,13 @@
         <ul id="programs">
             <img href="https://www.svtplay.se/kanaler/svt1" src="@Url.Content("~/Style/Images/SVT1.png")" alt="Ikon för SVT1 saknas" />
             @foreach (var item in Model)
-            {
-                //if (item.date.Value.Date == dateToday)
-                //{
-                if (@item.channel.name == "SVT1")
-                {
+                    {
+                        //if (item.date.Value.Date == dateToday)
+                        //{
+                        if (@item.channel.name == "SVT1")
+                        {
                     <li title=@(item.description + item.time_to)>@item.time_from @item.name </li>
-                }
+                        }
                 @*}*@
             }
         </ul>

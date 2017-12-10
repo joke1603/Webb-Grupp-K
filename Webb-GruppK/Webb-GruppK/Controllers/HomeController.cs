@@ -97,25 +97,35 @@ namespace Webb_GruppK.Controllers
         [HttpGet]
         public ActionResult AdminPage()
         {
-            ViewBag.programList = db.programs.Select(f => new SelectListItem { Value = f.programid.ToString(), Text = f.name });
-            news newnews = new news();
-            return View(newnews);
+            ViewBag.programList = db.programs.Select(f => new SelectListItem { Value = f.name, Text = f.name });
+            news newNews = new news();
+            return View(newNews);
         }
 
         [HttpPost]
-        public ActionResult AdminPage(news newnews)
+        public ActionResult AdminPage(news newNews)
         {
 
 
             if (ModelState.IsValid)
             {
-                news newly = new news();
-                newly.programid = newnews.programid;
-                
+                news updatenews = new news();
+                updatenews.programid = newNews.programid;
+                updatenews.information = newNews.information;
+                db.news.Add(updatenews);
+                db.SaveChanges();
             }
 
             ModelState.Clear();
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult newsinfo(int newNews)
+        {
+            List<program> news = db.programs.Where(s => s.programid == newNews).ToList();
+            return View(news);
+
         }
 
     }

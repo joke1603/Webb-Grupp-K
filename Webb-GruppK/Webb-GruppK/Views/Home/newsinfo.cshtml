@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Webb_GruppK.Models.program>
+
+@{
+    ViewBag.Title = "newsinfo";
+}
+
+<div id="newsSection">
+    @foreach (var item in Model)
+    {
+        <div id="news">
+            <p>
+                <h2>Information om programmet</h2>
+                @item.name,
+                @item.FK_channelid
+            </p>
+            </div>
+            }
+        </div>

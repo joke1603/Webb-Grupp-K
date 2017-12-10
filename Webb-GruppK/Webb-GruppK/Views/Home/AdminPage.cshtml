@@ -1,0 +1,22 @@
+﻿@model Webb_GruppK.Models.news
+@{
+    ViewBag.Title = "Adminpage";
+}
+
+<div id="adminPanel-cont">
+    <h3>Lägga till nyheter</h3>
+    @using (Html.BeginForm("AdminPage", "Home", FormMethod.Post))
+    {
+        @Html.LabelFor(model => model.programid)
+        @Html.DropDownListFor(x => x.programid, new SelectList(ViewBag.programList, "Value", "Text"))
+        
+        @Html.LabelFor(model => model.information)
+        @Html.TextAreaFor(model => model.information)
+
+        <input type="submit" id="btnadminPanel" value="Insert" />
+    }
+</div>
+<div class="AddChannels">
+    <input type="button" value="Redigera" onclick="location.href='@Url.Action("Index", "news")'" />
+
+</div>

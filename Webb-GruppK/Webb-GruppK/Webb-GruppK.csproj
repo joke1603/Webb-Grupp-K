@@ -264,6 +264,8 @@
     <Content Include="Views\Home\chanlist.cshtml" />
     <Content Include="Views\Home\addfavorite.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\AdminPage.cshtml" />
+    <Content Include="Views\Home\newsinfo.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
