@@ -19,6 +19,7 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="programid" Type="int" />
+          <Property Name="information" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="person">
           <Key>
@@ -256,6 +257,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="programid" Type="Int32" />
           <NavigationProperty Name="program" Relationship="TvModel.FK_news_program" FromRole="news" ToRole="program" />
+          <Property Name="information" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_news_program">
           <End Type="TvModel.program" Role="program" Multiplicity="0..1" />
@@ -326,6 +328,7 @@
           <EntitySetMapping Name="news">
             <EntityTypeMapping TypeName="TvModel.news">
               <MappingFragment StoreEntitySet="news">
+                <ScalarProperty Name="information" ColumnName="information" />
                 <ScalarProperty Name="programid" ColumnName="programid" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>

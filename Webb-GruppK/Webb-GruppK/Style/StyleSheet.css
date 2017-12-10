@@ -148,10 +148,11 @@ a:hover@menu-icon
     display: none;
     padding: 40px;
     text-align: left;
-	top: 150px;
+	top: 110px;
 	padding-top:50px;
 	margin: 90px auto 0;
 	margin-bottom: 300px;
+    margin-top: 20px;
 }
 .tabcontent img
 {
@@ -199,7 +200,7 @@ a:hover@menu-icon
 	margin-right: 20px;
 	width: 180px;
 }
-input[type=checkbox]
+/*input[type=checkbox]
 {
 	-ms-transform: scale(2);
 	-moz-transform: scale(2);
@@ -208,7 +209,7 @@ input[type=checkbox]
 	padding: 10px;
 	margin-bottom: 20px;
 	
-}
+}*/
 #programs
 {
 	margin-left: 140px;
@@ -274,8 +275,9 @@ nav ul li
 }
 #genreSearchSection
 {
-    margin-left: 45%;  
-    margin-bottom: 30px; 
+    margin-left: 45%;
+    margin-top: 15px;  
+    margin-bottom: 0px; 
 }
 section
 {
@@ -556,9 +558,17 @@ section
     text-decoration: none;
     font-size: 20px;
 }
+#newsSection
+{
+    /*border: 1px solid;*/
+    width: 100%;
+}
 #news
 {
-    border: 1px solid;
+    padding: 15px;
+    width: 20%;
+    background: #999999;
+    margin-left: 50px;
 }
 /*----------------------------------Footer-------------------------------*/
 footer
