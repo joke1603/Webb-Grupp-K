@@ -28,30 +28,7 @@ namespace Webb_GruppK.Controllers
             }
             ViewBag.newslist = db.news.ToList();
             return View(program.ToList());
-            //var program = db.programs.Include(p => p.channel);
-            //if (!String.IsNullOrEmpty(searchString))
-            //{
-            //    program = program.Where(p => p.name.Contains(searchString) || p.genre.Contains(searchString) || p.channel.name.Contains(searchString));
-            //}
-            //if (!string.IsNullOrEmpty(genreSearch))
-            //{
-            //    program = program.Where(p => p.genre.Contains(genreSearch));
-            //}
-            //var programs = db.programs.Include(p => p.channel);
-            //return View(programs.ToList());
-
-
-            //var pro = db.programs.Include(p => p.channel);
-            //if (!String.IsNullOrEmpty(searchString))
-            //{
-            //    pro = pro.Where(p => p.name.Contains(searchString) || p.genre.Contains(searchString) || p.channel.name.Contains(searchString));             
-            //}
-            //if (!string.IsNullOrEmpty(genreSearch))
-            //{
-            //    pro = pro.Where(p => p.genre.Contains(genreSearch));
-            //}
-            ////ViewBag.Channels = db.channels.OrderBy(c => c.name).ToList();
-            //return View(pro.ToList()); //.Include("channel")
+            
         }
 
         [HttpGet]
@@ -116,6 +93,29 @@ namespace Webb_GruppK.Controllers
         public ActionResult addfavorite()
         {
             return View("chanlist");
+        }
+        [HttpGet]
+        public ActionResult AdminPage()
+        {
+            ViewBag.programList = db.programs.Select(f => new SelectListItem { Value = f.programid.ToString(), Text = f.name });
+            news newnews = new news();
+            return View(newnews);
+        }
+
+        [HttpPost]
+        public ActionResult AdminPage(news newnews)
+        {
+
+
+            if (ModelState.IsValid)
+            {
+                news newly = new news();
+                newly.programid = newnews.programid;
+                
+            }
+
+            ModelState.Clear();
+            return RedirectToAction("Index");
         }
 
     }
