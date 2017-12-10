@@ -41,6 +41,7 @@
                 new SelectListItem {Text = "Kriminal" },
                 new SelectListItem {Text = "Väder" },
                 new SelectListItem {Text = "Sci-fi" },
+                new SelectListItem {Text = "Action" },
                 new SelectListItem {Text = "Sport" },
                 new SelectListItem {Text = "Drama" },
                 new SelectListItem {Text = "Debatt" }
@@ -52,22 +53,22 @@
     @{ var dateToday = DateTime.Now.Date;
     }
     @{var dateTomorrow = DateTime.Now.Date;
-        dateTomorrow.AddDays(1).ToString();
+        dateTomorrow.AddDays(1).ToString("yyyy-MM-dd");
     }
     @{var dateN1 = DateTime.Now.Date;
-        dateTomorrow.AddDays(2).ToString();
+        dateTomorrow.AddDays(2).ToString("yyyy-MM-dd");
     }
     @{var dateN2 = DateTime.Now.Date;
-        dateTomorrow.AddDays(3).ToString();
+        dateTomorrow.AddDays(3).ToString("yyyy-MM-dd");
     }
     @{var dateN3 = DateTime.Now.Date;
-        dateTomorrow.AddDays(4).ToString();
+        dateTomorrow.AddDays(4).ToString("yyyy-MM-dd");
     }
     @{var dateN4 = DateTime.Now.Date;
-        dateTomorrow.AddDays(5).ToString();
+        dateTomorrow.AddDays(5).ToString("yyyy-MM-dd");
     }
     @{var dateN5 = DateTime.Now.Date;
-        dateTomorrow.AddDays(6).ToString();
+        dateTomorrow.AddDays(6).ToString("yyyy-MM-dd");
     }
     
     <button class="tablink" onclick="openTab('Idag', this, ' #999999')" id="defaultOpen">Idag @DateTime.Now.Date.ToString("dd-MM")</button>
@@ -82,65 +83,65 @@
             <img href="https://www.svtplay.se/kanaler/svt1" src="@Url.Content("~/Style/Images/SVT1.png")" alt="Ikon för SVT1 saknas" />
             @foreach (var item in Model)
             {
-                //if (item.date.Value.Date == dateToday)
-                //{
-                if (@item.channel.name == "SVT1")
+                if (item.date.Value.Date == DateTime.Now.Date)
                 {
+                    if (@item.channel.name == "SVT1")
+                    {
                     <li title=@(item.description + item.time_to)>@item.time_from @item.name </li>
                 }
-                @*}*@
+                }
             }
         </ul>
         <ul id="programs">
             <img href="https://www.svtplay.se/kanaler/svt2" src="@Url.Content("~/Style/Images/SVT2.png")" alt="Ikon för SVT2 saknas" />
             @foreach (var item in Model)
             {
-                //if (item.date.Value.Date == dateToday)
-                //{
-                if (@item.channel.name == "SVT2")
+                if (item.date.Value.Date == dateToday)
                 {
+                    if (@item.channel.name == "SVT2")
+                    {
                     <li>@item.time_from @item.name</li>
                 }
-                //}
+                }
             }
         </ul>
         <ul id="programs">
             <img href="https://www.viafree.se/program/?channel=tv3" src="@Url.Content("~/Style/Images/TV3.png")" alt="Ikon för TV3 saknas" />
             @foreach (var item in Model)
             {
-                //if (item.date.Value.Date == dateToday)
-                //{
+                if (item.date.Value.Date == dateToday)
+                {
                 if (@item.channel.name == "TV3")
                 {
                     <li>@item.time_from @item.name</li>
                 }
-                @*}*@
+                }
             }
         </ul>
         <ul id="programs">
             <img href="http://www.tv4.se/" src="@Url.Content("~/Style/Images/TV4.png")" alt="Ikon för TV4 saknas">
             @foreach (var item in Model)
             {
-                //if (item.date.Value.Date == dateToday)
-                //{
+                if (item.date.Value.Date == dateToday)
+                {
                 if (@item.channel.name == "TV4")
                 {
                     <li>@item.time_from @item.name</li>
                 }
-                @*}*@
+                }
             }
         </ul>
         <ul id="programs">
             <img href="https://www.viafree.se/program/?channel=tv6" src="@Url.Content("~/Style/Images/TV6.png")" alt="Ikon för TV6 saknas">
             @foreach (var item in Model)
             {
-                //if (item.date.Value.Date == dateToday)
-                //{
+                if (item.date.Value.Date == dateToday)
+                {
                 if (@item.channel.name == "TV6")
                 {
                     <li>@item.time_from @item.name</li>
                 }
-                @*}*@
+                }
             }
         </ul>
     </div>
@@ -150,65 +151,65 @@
             <img href="https://www.svtplay.se/kanaler/svt1" src="@Url.Content("~/Style/Images/SVT1.png")" alt="Ikon för SVT1 saknas" />
             @foreach (var item in Model)
             {
-                //if (item.date.Value.Date == dateTomorrow)
-                //{
+                if (item.date.Value.Date == dateTomorrow)
+                {
                 if (@item.channel.name == "SVT1")
                 {
                     <li>@item.time_from @item.name</li>
                 }
-                @*}*@
+                }
             }
         </ul>
         <ul id="programs">
             <img href="https://www.svtplay.se/kanaler/svt2" src="@Url.Content("~/Style/Images/SVT2.png")" alt="Ikon för SVT2 saknas" />
             @foreach (var item in Model)
             {
-                //if (item.date.Value.Date == dateTomorrow)
-                //{
+                if (item.date.Value.Date == dateTomorrow)
+                {
                 if (@item.channel.name == "SVT2")
                 {
                     <li>@item.time_from @item.name</li>
                 }
-                @*}*@
+                }
             }
         </ul>
         <ul id="programs">
             <img href="https://www.viafree.se/program/?channel=tv3" src="@Url.Content("~/Style/Images/TV3.png")" alt="Ikon för TV3 saknas" />
             @foreach (var item in Model)
             {
-                //if (item.date.Value.Date == dateTomorrow)
-                //{
+                if (item.date.Value.Date == dateTomorrow)
+                {
                 if (@item.channel.name == "TV3")
                 {
                     <li>@item.time_from @item.name</li>
                 }
-                @*}*@
+                }
             }
         </ul>
         <ul id="programs">
             <img href="http://www.tv4.se/" src="@Url.Content("~/Style/Images/TV4.png")" alt="Ikon för TV4 saknas">
             @foreach (var item in Model)
             {
-                //if (item.date.Value.Date == dateTomorrow)
-                //{
+                if (item.date.Value.Date == dateTomorrow)
+                {
                 if (@item.channel.name == "TV4")
                 {
                     <li>@item.time_from @item.name</li>
                 }
-                @*}*@
+                }
             }
         </ul>
         <ul id="programs">
             <img href="https://www.viafree.se/program/?channel=tv6" src="@Url.Content("~/Style/Images/TV6.png")" alt="Ikon för TV6 saknas">
             @foreach (var item in Model)
             {
-                //if (item.date.Value.Date == dateTomorrow)
-                //{
+                if (item.date.Value.Date == dateTomorrow)
+                {
                 if (@item.channel.name == "TV6")
                 {
                     <li>@item.time_from @item.name</li>
                 }
-                @*}*@
+                }
             }
         </ul>
     </div>
