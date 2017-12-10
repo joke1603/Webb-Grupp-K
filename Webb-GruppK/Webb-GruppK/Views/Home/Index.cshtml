@@ -14,21 +14,22 @@
 
 
 </div>*@
-
-@foreach (var news in ViewBag.newslist)
-{
-    <div id="news">
-        @foreach (var p in Model)
-        {
-            if (news.programid == p.programid)
+<div id="newsSection">
+    @foreach (var news in ViewBag.newslist)
+    {
+        <div id="news">
+            @foreach (var p in Model)
             {
-            <p>
-                @p.name, @p.description;
-        </p>
+                if (news.programid == p.programid)
+                {
+                    <h1>@p.name</h1>
+                    <h2>@news.information</h2>
+                    <p>@p.date @p.time_from</p>
+                }
             }
-        }
-    </div>
-}
+        </div>
+    }
+</div>
 <div id="genreSearchSection">
     @using (Html.BeginForm())
     {
