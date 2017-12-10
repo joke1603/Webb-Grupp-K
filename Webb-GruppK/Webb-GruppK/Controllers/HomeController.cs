@@ -26,6 +26,7 @@ namespace Webb_GruppK.Controllers
             {
                 program = program.Where(p => p.genre.Contains(genreSearch));
             }
+            ViewBag.newslist = db.news.ToList();
             return View(program.ToList());
             //var program = db.programs.Include(p => p.channel);
             //if (!String.IsNullOrEmpty(searchString))
