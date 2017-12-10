@@ -2,17 +2,14 @@
 @{
     ViewBag.Title = "Index";
 }
-<div id="news1">
-    
-
-</div>
-<div id="news2">
-
-
-</div>
-<div id="news3">
+<div  id="news">
+    @foreach (var item in Model)
+    {
+        <div>
 
 
+        </div>
+    }   
 </div>
 <div id="genreSearchSection">
     @using (Html.BeginForm())
