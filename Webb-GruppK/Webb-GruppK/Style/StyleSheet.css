@@ -3,7 +3,7 @@
 	background-image: url("Images/curtain1.jpg");
 	font: 18px/20px Arial, Sans-Serif;
 	color: #000;
-	margin-top: 250px;
+	margin-top: 200px;
 	margin-bottom: 0;
 }
 h1
@@ -94,40 +94,6 @@ a:hover@menu-icon
 {
 	border-radius: 4px 0;
 }
-/*#searchBar[type=text] {
-    width: 180px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    background-image: url('Images/searchicon.png');
-    background-position: 10px 10px; 
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
-    -webkit-transition: width 0.4s ease-out-in;
-    transition: width 0.4s ease-out-in;
-}
-#searchBar[type=text]:focus {
-    width: 100%;
-}
-.ui-autocomplete 
-{
-    background: #4a4a4a;
-    border-radius: 0px;
-	color: #FFF;
-	position: relative;
-	z-index: 101;
-}
-.ui-autocomplete.source:hover 
-{
-    background: #454545;
-}
-.ui-menu .ui-menu-item a
-{
-    height:10px;
-    font-size:2px;
-}*/
 /*---------------------------------Content---------------------------------*/
 .tablink {
     background-color: #555;
@@ -199,16 +165,6 @@ a:hover@menu-icon
 	margin-right: 20px;
 	width: 180px;
 }
-/*input[type=checkbox]
-{
-	-ms-transform: scale(2);
-	-moz-transform: scale(2);
-	-webkit-transform: scale(2);
-	-o-transform: scale(2);
-	padding: 10px;
-	margin-bottom: 20px;
-	
-}*/
 #programs
 {
 	margin-left: 70px;
@@ -563,7 +519,7 @@ section
 }
 #news
 {
-    padding: 15px;
+    padding: 5px;
     width: 25%;
     background: #999999;
     margin-left: 4.5%;
@@ -599,6 +555,66 @@ section
     text-align: center;
     text-decoration: none;
     font-size: 20px;
+}
+#editNewsSectionInfo
+{
+    padding: 1%;
+    background-color:#999999;
+    margin-left: 35%;
+}
+#newsSectionEdit
+{
+    background-color: #999999;
+    width: 30%;
+    text-align: center;
+    margin-left: 35%;
+    padding: 1%;
+}
+#newsSaveButton
+{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 60px;
+	margin-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+}
+#deleteNewsSection
+{
+    background-color:  #999999;
+    width: 30%;
+    padding: 1%;
+    text-align: center;
+    margin-left: 30%;
+}
+#deleteNewsButton
+{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 60px;
+	margin-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+}
+#newsSectionChannelinfo
+{
+    background-color: #999999;
+    display: inline-table;
+    width: 30%;
+    padding: 1%;
+    margin-left: 35%;
+    margin-bottom: 240px;
+}
+#newsInfoSection
+{
+    background-color: #999999;
+    padding: 1%;
+    width: 30%;
+    margin-left: 33%;
 }
 /*----------------------------------Footer-------------------------------*/
 footer

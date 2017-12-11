@@ -7,30 +7,30 @@
 @{var kanal = ""; }
 @{ var kanalinfo = new HtmlString("Programmet visas på"); }
 
-<div id="newsSection">
+<div id="newsInfoSection">
     @foreach (var item in Model)
     {
         if (item.FK_channelid == 1)
         {
-            kanal = "Svt1";
+            kanal = "SVT1";
         }
         else if(item.FK_channelid == 2)
         {
-            kanal = "Svt2";
+            kanal = "SVT2";
         }
         else if(item.FK_channelid == 3)
         {
-            kanal = "Svt3";
+            kanal = "TV3";
         }
         else if (item.FK_channelid == 4)
         {
-            kanal = "Kanal 4";
+            kanal = "TV4";
         }
         else if (item.FK_channelid == 5)
         {
-            kanal = "Kanal 5";
+            kanal = "TV6";
         }
-        <div id="news">
+        <div>
             <p>
                 <h2>Information om programmet</h2>
                 @item.name,
@@ -39,4 +39,5 @@
             </p>
             </div>
             }
-        </div>
+    @Html.ActionLink("Tillbaka", "Index", "Home")
+</div>
