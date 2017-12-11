@@ -3,20 +3,22 @@
     ViewBag.Title = "Adminpage";
 }
 
-<div id="adminPanel-cont">
-    <h3>Lägga till nyheter</h3>
+<div id="adminNewsSection">
+    <h3>Lägga till nyheter:</h3>
     @using (Html.BeginForm("AdminPage", "Home", FormMethod.Post))
     {
-        @Html.LabelFor(model => model.programid)
-        @Html.DropDownListFor(x => x.programid, new SelectList(ViewBag.programList, "Value", "Text"))
-        
-        @Html.LabelFor(model => model.information)
-        @Html.TextAreaFor(model => model.information)
+        @Html.LabelFor(model => model.programid)<br />
+        @Html.DropDownListFor(x => x.programid, new SelectList(ViewBag.programList, "Value", "Text"))<br />
+        <br />
+        @Html.LabelFor(model => model.information)<br />
+        @Html.TextAreaFor(model => model.information)<br /><br />
 
-        <input type="submit" id="btnadminPage" value="Insert" />
+        <input id="addNewsButton" type="submit" id="btnadminPage" value="Insert" />
     }
-</div>
-<div class="AddChannels">
-    <input type="button" value="Redigera" onclick="location.href='@Url.Action("Index", "news")'" />
 
+    <h1>Eller</h1>
+    <div>
+        <input id="editNewsButton" type="button" value="Redigera" onclick="location.href='@Url.Action("Index", "news")'" />
+
+    </div>
 </div>

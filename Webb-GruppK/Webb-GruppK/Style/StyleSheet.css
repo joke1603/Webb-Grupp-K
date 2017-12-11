@@ -211,7 +211,7 @@ a:hover@menu-icon
 }*/
 #programs
 {
-	margin-left: 100px;
+	margin-left: 70px;
 }
 #Idag{
 	background-color: #999999;
@@ -559,15 +559,46 @@ section
 }
 #newsSection
 {
-    /*border: 1px solid;*/
     width: 100%;
 }
 #news
 {
     padding: 15px;
-    width: 20%;
+    width: 25%;
     background: #999999;
-    margin-left: 50px;
+    margin-left: 4.5%;
+    display: inline-block;
+
+}
+#adminNewsSection
+{
+    background-color: #999999;
+    padding: 2%;
+    width: 10%;
+    margin-left: 43%;
+    text-align: center;
+}
+#addNewsButton
+{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 60px;
+	margin-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+}
+#editNewsButton
+{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 60px;
+	margin-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
 }
 /*----------------------------------Footer-------------------------------*/
 footer
