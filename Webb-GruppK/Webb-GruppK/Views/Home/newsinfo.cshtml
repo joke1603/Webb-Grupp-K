@@ -4,14 +4,38 @@
     ViewBag.Title = "newsinfo";
 }
 
+@{var kanal = ""; }
+@{ var kanalinfo = new HtmlString("Programmet visas på"); }
+
 <div id="newsSection">
     @foreach (var item in Model)
     {
+        if (item.FK_channelid == 1)
+        {
+            kanal = "Svt1";
+        }
+        else if(item.FK_channelid == 2)
+        {
+            kanal = "Svt2";
+        }
+        else if(item.FK_channelid == 3)
+        {
+            kanal = "Svt3";
+        }
+        else if (item.FK_channelid == 4)
+        {
+            kanal = "Kanal 4";
+        }
+        else if (item.FK_channelid == 5)
+        {
+            kanal = "Kanal 5";
+        }
         <div id="news">
             <p>
                 <h2>Information om programmet</h2>
                 @item.name,
-                @item.FK_channelid
+                @item.description @kanalinfo 
+                @kanal
             </p>
             </div>
             }

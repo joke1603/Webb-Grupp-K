@@ -44,35 +44,6 @@ namespace Webb_GruppK.Controllers
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Login(person reg)
-        {
-            if (ModelState.IsValid)
-            {
-                var details = (from userlist in db.people
-                               where userlist.email == reg.email && userlist.password == reg.password
-                               select new
-                               {
-                                   userlist.personid,
-                                   userlist.email,
-                                   userlist.role
-                               }).ToList();
-                if (details.FirstOrDefault() != null)
-                {
-                    Session["personid"] = details.FirstOrDefault().personid;
-                    Session["email"] = details.FirstOrDefault().email;
-                    Session["admin"] = details.FirstOrDefault().role;
-                    return RedirectToAction("Index", "Home");
-                }
-            }
-            else
-            {
-                ModelState.AddModelError("", "Invalid Credentials");
-            }
-            return View(reg);
-        }
-
         public ActionResult Welcome()
         {
             return View();

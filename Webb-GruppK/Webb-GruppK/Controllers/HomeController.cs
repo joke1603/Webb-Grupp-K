@@ -31,25 +31,6 @@ namespace Webb_GruppK.Controllers
             
         }
 
-        [HttpGet]
-        public ActionResult Person()
-        {
-            person newPerson = new person();
-            return View(newPerson);
-        }
-
-        [HttpPost]
-        public ActionResult Account(person newPerson)
-        {
-            if (ModelState.IsValid)
-            {
-                db.people.Add(newPerson);
-                db.SaveChanges();
-            }
-            ModelState.Clear();
-            return RedirectToAction("Login", "Login", new person());
-        }
-
         public ActionResult MyPage(person User)
         {
             var Usr = Convert.ToInt32(Session["id"]);
@@ -97,7 +78,7 @@ namespace Webb_GruppK.Controllers
         [HttpGet]
         public ActionResult AdminPage()
         {
-            ViewBag.programList = db.programs.Select(f => new SelectListItem { Value = f.name, Text = f.name });
+            ViewBag.programList = db.programs.Select(f => new SelectListItem { Value = f.programid.ToString(), Text = f.name });
             news newNews = new news();
             return View(newNews);
         }
@@ -121,11 +102,18 @@ namespace Webb_GruppK.Controllers
         }
 
         [HttpGet]
-        public ActionResult newsinfo(int newNews)
+        public ActionResult newsinfo(int Id)
         {
-            List<program> news = db.programs.Where(s => s.programid == newNews).ToList();
+            List<program> news = db.programs.Where(s => s.programid == Id).ToList();
             return View(news);
 
+        }
+
+        [HttpGet]
+        public ActionResult channelinfo(int cID)
+        {
+            List<program> prog = db.programs.Where(s => s.programid == cID).ToList();
+            return View(prog);
         }
 
     }

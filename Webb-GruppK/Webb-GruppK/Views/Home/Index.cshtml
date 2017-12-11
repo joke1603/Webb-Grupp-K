@@ -22,7 +22,7 @@
             {
                 if (news.programid == p.programid)
                 {
-                    <h1>@Html.ActionLink(p.name, "newsinfo",new { newNews = p.programid}) </h1>
+                    <h1>@Html.ActionLink(p.name, "newsinfo",new { Id = p.programid}) </h1>
                     <h2>@news.information</h2>
                     <p>@p.date @p.time_from</p>
                 }
@@ -86,7 +86,7 @@
                         //{
                         if (@item.channel.name == "SVT1")
                         {
-                    <li title=@(item.description + item.time_to)>@item.time_from @item.name </li>
+                    <li title=@(item.description + item.time_to)>@*@item.time_from.Value.ToString("hh:mm")*@ @item.name </li>
                         }
                 @*}*@
             }
