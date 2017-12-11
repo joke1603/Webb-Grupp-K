@@ -112,7 +112,7 @@ namespace Webb_GruppK.Controllers
         [HttpGet]
         public ActionResult channelinfo(int cID)
         {
-            List<program> prog = db.programs.Where(s => s.programid == cID).ToList();
+            List<program> prog = db.programs.Where(p => p.FK_channelid == cID).ToList();
             return View(prog);
         }
 

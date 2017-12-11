@@ -86,7 +86,7 @@
                         //{
                         if (@item.channel.name == "SVT1")
                         {
-                    <li title=@(item.description + item.time_to)>@*@item.time_from.Value.ToString("hh:mm")*@ @item.name </li>
+                    <li title=@(item.description + item.time_to)>@*@item.time_from.Value.ToString("hh:mm")*@ <h1>@Html.ActionLink(item.name, "channelinfo", new { cID= item.FK_channelid}) </h1> </li>
                         }
                 @*}*@
             }

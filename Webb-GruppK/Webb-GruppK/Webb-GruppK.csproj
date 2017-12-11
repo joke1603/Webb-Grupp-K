@@ -198,6 +198,7 @@
     <Compile Include="Controllers\channelController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\newsController.cs" />
     <Compile Include="Controllers\personController.cs" />
     <Compile Include="Controllers\programController.cs" />
     <Compile Include="Global.asax.cs">
@@ -266,6 +267,12 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\AdminPage.cshtml" />
     <Content Include="Views\Home\newsinfo.cshtml" />
+    <Content Include="Views\Home\channelinfo.cshtml" />
+    <Content Include="Views\news\Create.cshtml" />
+    <Content Include="Views\news\Delete.cshtml" />
+    <Content Include="Views\news\Details.cshtml" />
+    <Content Include="Views\news\Edit.cshtml" />
+    <Content Include="Views\news\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
