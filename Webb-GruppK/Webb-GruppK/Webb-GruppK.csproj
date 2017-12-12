@@ -177,30 +177,18 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
-    <Content Include="Views\personchannel\Create.cshtml" />
-    <Content Include="Views\personchannel\Delete.cshtml" />
-    <Content Include="Views\personchannel\Details.cshtml" />
-    <Content Include="Views\personchannel\Edit.cshtml" />
-    <Content Include="Views\personchannel\Index.cshtml" />
     <Content Include="Views\person\Create.cshtml" />
     <Content Include="Views\person\Delete.cshtml" />
     <Content Include="Views\person\Details.cshtml" />
     <Content Include="Views\person\Edit.cshtml" />
     <Content Include="Views\person\Index.cshtml" />
-    <Content Include="Views\channel\Create.cshtml" />
-    <Content Include="Views\channel\Delete.cshtml" />
-    <Content Include="Views\channel\Details.cshtml" />
-    <Content Include="Views\channel\Edit.cshtml" />
-    <Content Include="Views\channel\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\channelController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\newsController.cs" />
     <Compile Include="Controllers\personController.cs" />
-    <Compile Include="Controllers\programController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -251,11 +239,6 @@
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\program\Create.cshtml" />
-    <Content Include="Views\program\Delete.cshtml" />
-    <Content Include="Views\program\Details.cshtml" />
-    <Content Include="Views\program\Edit.cshtml" />
-    <Content Include="Views\program\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\person\Register.cshtml" />
     <Content Include="Views\person\Login.cshtml" />
