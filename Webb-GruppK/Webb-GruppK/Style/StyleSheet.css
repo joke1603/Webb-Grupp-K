@@ -121,7 +121,7 @@ a:hover@menu-icon
 }
 .tabcontent img
 {
-	height: 80px;	
+	height: 80px;
 }
 .myProgramSection
 {
@@ -630,6 +630,7 @@ footer
 	bottom: 0;
 	opacity: 0.9;
 	text-align: center;
+    z-index:4;
 }
 footer.firstFooter
 {
