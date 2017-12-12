@@ -3,17 +3,49 @@
 @{
     ViewBag.Title = "newsinfo";
 }
-
+@{
+    var kanal = "";
+}
+@foreach (var i in Model)
+{
+    if (i.FK_channelid == 1)
+    {
+        kanal = "SVT1";
+    }
+    else if (i.FK_channelid == 2)
+    {
+        kanal = "SVT2";
+    }
+    else if (i.FK_channelid == 3)
+    {
+        kanal = "TV3";
+    }
+    else if (i.FK_channelid == 4)
+    {
+        kanal = "TV4";
+    }
+    else if (i.FK_channelid == 5)
+    {
+        kanal = "TV6";
+    }
+}
 <div id="newsSectionChannelinfo">
+    
+                <h1>@kanal</h1>
+
     @foreach (var item in Model)
     {
+            
         <div id="newsChannelinfo">
             <p>
+                @item.date.Value.ToString("yyyy-MM-dd"),
+                @item.time_from,
                 @item.name,
                 @item.description
             </p>
         </div>
     }
+    
 </div>
 
 

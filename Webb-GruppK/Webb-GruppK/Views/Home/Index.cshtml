@@ -12,7 +12,7 @@
                 {
                     <h1>@Html.ActionLink(p.name, "newsinfo",new { Id = p.programid}) </h1>
                     <h3>@news.information</h3>
-                    <p>@p.date.Value.ToString("yyyy-mm-dd") - @p.time_from</p>
+                    <p>@p.date.Value.ToString("yyyy-MM-dd") - @p.time_from</p> 
                 }
             }
         </div>
@@ -39,13 +39,13 @@
 <div class="channels">
     @{ var dateToday = DateTime.Now.Date;
     }
-    <button class="tablink" onclick="openTab('Idag', this, ' #999999')" id="defaultOpen">Idag @DateTime.Now.Date.ToString("dd-MM")</button>
-    <button class="tablink" onclick="openTab('Imorgon', this, ' #999999')">Imorgon @dateToday.AddDays(1).ToString("dd-MM")</button>
-    <button class="tablink" onclick="openTab('n1', this, ' #999999')">@dateToday.AddDays(2).ToString("dd-MM")</button>
-    <button class="tablink" onclick="openTab('n2', this, ' #999999')">@dateToday.AddDays(3).ToString("dd-MM")</button>
-    <button class="tablink" onclick="openTab('n3', this, ' #999999')">@dateToday.AddDays(4).ToString("dd-MM")</button>
-    <button class="tablink" onclick="openTab('n4', this, ' #999999')">@dateToday.AddDays(5).ToString("dd-MM")</button>
-    <button class="tablink" onclick="openTab('n5', this, ' #999999')">@dateToday.AddDays(6).ToString("dd-MM")</button>
+    <button class="tablink" onclick="openTab('Idag', this, ' #999999')" id="defaultOpen">Idag @DateTime.Now.Date.ToString("dd/MM")</button>
+    <button class="tablink" onclick="openTab('Imorgon', this, ' #999999')">Imorgon @dateToday.AddDays(1).ToString("dd/MM")</button>
+    <button class="tablink" onclick="openTab('n1', this, ' #999999')">@dateToday.AddDays(2).ToString("dd/MM")</button>
+    <button class="tablink" onclick="openTab('n2', this, ' #999999')">@dateToday.AddDays(3).ToString("dd/MM")</button>
+    <button class="tablink" onclick="openTab('n3', this, ' #999999')">@dateToday.AddDays(4).ToString("dd/MM")</button>
+    <button class="tablink" onclick="openTab('n4', this, ' #999999')">@dateToday.AddDays(5).ToString("dd/MM")</button>
+    <button class="tablink" onclick="openTab('n5', this, ' #999999')">@dateToday.AddDays(6).ToString("dd/MM")</button>
     <div id="Idag" class="tabcontent">
         <ul id="programs">
             <img href="https://www.svtplay.se/kanaler/svt1" src="@Url.Content("~/Style/Images/SVT1.png")" alt="Ikon för SVT1 saknas" />
