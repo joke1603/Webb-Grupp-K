@@ -35,7 +35,9 @@
                 <h2>Information om programmet</h2>
                 @item.name,
                 @item.description @kanalinfo 
-                @kanal
+                @kanal <br />
+                @item.date.Value.ToString("yyyy-MM-dd")
+                Kl. @item.time_from
             </p>
             </div>
             }
