@@ -34,7 +34,7 @@ namespace Webb_GruppK.Controllers
             {
                 db.people.Add(reg);
                 db.SaveChanges();
-                return RedirectToAction("Login","Login");
+                return RedirectToAction("Login", "Login");
             }
             return View();
         }
