@@ -80,7 +80,7 @@ header
 {
 	float: right;
 	position: absolute;
-	right: 220px;
+	right: 15px;
 	bottom: 5px;	
 }
 #menu-icon
@@ -121,7 +121,7 @@ a:hover@menu-icon
 }
 .tabcontent img
 {
-	height: 80px;	
+	height: 80px;
 }
 .myProgramSection
 {
@@ -300,6 +300,7 @@ section
     text-align: center;
     text-decoration: none;
     font-size: 20px;
+    width: 1px auto;
 }
 #loginSection
 {
@@ -530,7 +531,7 @@ section
 {
     background-color: #999999;
     padding: 2%;
-    width: 10%;
+    width: 190px;
     margin-left: 43%;
     text-align: center;
 }
@@ -560,7 +561,8 @@ section
 {
     padding: 1%;
     background-color:#999999;
-    margin-left: 35%;
+    margin-left: 30%;
+    width: 700px;
 }
 #newsSectionEdit
 {
@@ -584,10 +586,10 @@ section
 #deleteNewsSection
 {
     background-color:  #999999;
-    width: 30%;
+    width: 540px;
     padding: 1%;
     text-align: center;
-    margin-left: 30%;
+    margin-left: 35%;
 }
 #deleteNewsButton
 {
@@ -628,6 +630,7 @@ footer
 	bottom: 0;
 	opacity: 0.9;
 	text-align: center;
+    z-index:4;
 }
 footer.firstFooter
 {
@@ -717,7 +720,7 @@ footer p, footer h3
 /*----------------Media(surfplatta och telefon)-----------------------*/
 @media screen and (max-width: 640px) /* iPhone  640×960*/
 {
-	body:
+	body
 	{
 		position: absolute;
 	}
@@ -743,24 +746,27 @@ footer p, footer h3
 		margin-top: 80px;
 		margin-right: 10px;
 	}
-	#search
-	{
-		position: absolute;
-		top: 15px;
-		right: 10px;
-		width: 40%;
-	}
+    #newsSection
+    {
+        visibility: hidden;
+    }
+    #genreSearchSection
+    {
+        margin-top: 0;
+    }
+	
 	nav ul, nav:active ul
 	{
 		display: none;
 		position: absolute;
-		padding: 10px;
+		padding: 1%;
 		background: #cccccc;
 		border: 1px solid black;
-		right: 20px;
+		right: 200px;
+        margin-right: 0px;
 		top: 80px;
-		padding-bottom: 50%;
-		width: 50%;
+		padding-bottom: 30%;
+		width: 40%;
 		border-radius: 2px 2px;
 	}
 	nav li
@@ -783,30 +789,12 @@ footer p, footer h3
 	}
 	footer
 	{	
-		position: fixed;	
-		height: 420px;
-		bottom: 0;
+        visibility: hidden;	
 	}
 	#loginSection
 	{
 		width: 90%;
 		margin-left: 2%;
-		margin-bottom: 480px;
-	}
-	#contactSection
-	{
-		width: 90%;
-		margin-left: 2%;
-		margin-bottom: 480px;
-	}
-	#aboutUsArticle
-	{
-		margin: 0;
-	}
-	#partners
-	{
-		margin: 0;
-		margin-top: 10px;
 		margin-bottom: 480px;
 	}
 	#svt1
