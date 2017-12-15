@@ -27,8 +27,7 @@ namespace Webb_GruppK.Controllers
                 program = program.Where(p => p.genre.Contains(genreSearch));
             }
             ViewBag.newslist = db.news.ToList();
-            return View(program.ToList());
-            
+            return View(program.ToList());            
         }
 
         public ActionResult MyPage(person User)
@@ -37,11 +36,8 @@ namespace Webb_GruppK.Controllers
             if (Session["id"] != null)
             {
                 ViewBag.favoritelist = db.personchannels.Where(x => x.FK_personid == Usr).Select(z => z.FK_channelid).ToList();
-
-
                 return View(db.programs.Include("channel").ToList());
             }
-
             return RedirectToAction("Index");
         }
         [HttpGet]
@@ -65,7 +61,6 @@ namespace Webb_GruppK.Controllers
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return RedirectToAction("MyPage", "Home");
@@ -82,12 +77,9 @@ namespace Webb_GruppK.Controllers
             news newNews = new news();
             return View(newNews);
         }
-
         [HttpPost]
         public ActionResult AdminPage(news newNews)
         {
-
-
             if (ModelState.IsValid)
             {
                 news updatenews = new news();
@@ -96,7 +88,6 @@ namespace Webb_GruppK.Controllers
                 db.news.Add(updatenews);
                 db.SaveChanges();
             }
-
             ModelState.Clear();
             return RedirectToAction("Index");
         }
@@ -106,7 +97,6 @@ namespace Webb_GruppK.Controllers
         {
             List<program> news = db.programs.Where(s => s.programid == Id).ToList();
             return View(news);
-
         }
 
         [HttpGet]
